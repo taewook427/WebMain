@@ -21,6 +21,7 @@ connhub,dev-history
 r-practice,dshs
 y-bootcamp,dshs
 y-student,dshs
+y-bootcamp,taskrit-teaming
 
 k1-graph,k1-time
 k1-graph,k1-kdm
@@ -43,6 +44,8 @@ k4-kaesl,usag-lib
 
 k5-lib,k5-kdm
 k5-lib,k5-kv
+k5-ext,usag-lib
+k6-linecount,usag-lib
 
 usag-lib,aft
 usag-lib,yas-desktop
