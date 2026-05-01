@@ -8,9 +8,10 @@ const panel = document.getElementById('side-panel');
 
 // parse CSV file
 function parseCSV(csvText) {
+    csvText = csvText.replace(/\r\n|\r/g, '\n').replace(/\n{2,}/g, '\n');
     const lines = csvText.trim().split('\n');
     if (lines.length === 0) return [];
-    
+
     const headers = lines[0].split(',').map(h => h.trim());
     return lines.slice(1).map(line => {
         const values = line.split(',');
@@ -121,20 +122,39 @@ function calculateYPositions() {
     // sort by date
     const uniqueDates = [...new Set(validDates)].sort((a, b) => new Date(b) - new Date(a));
     let currentY = 120;
+
+    // set gaps
+    const SAME_DATE_GAP = 140;
     const MIN_GAP = 150;
-    const MAX_GAP = 350;
+    const MAX_GAP = 400;
     yMap[uniqueDates[0]] = currentY;
 
     // calculate gap
     for (let i = 1; i < uniqueDates.length; i++) {
-        const date1 = new Date(uniqueDates[i-1] + '-01');
+        const prevDate = uniqueDates[i - 1];
+
+        // get prevDate overlaps counts
+        const laneCounts = {};
+        nodes.forEach(n => {
+            if (n.date === prevDate) {
+                laneCounts[n.lane_id] = (laneCounts[n.lane_id] || 0) + 1;
+            }
+        });
+        const maxOverlaps = Math.max(...Object.values(laneCounts), 1);
+
+        // get prevDate overlaps total height
+        const prevDateHeight = (maxOverlaps - 1) * SAME_DATE_GAP;
+
+        // get month difference
+        const date1 = new Date(uniqueDates[i - 1] + '-01');
         const date2 = new Date(uniqueDates[i] + '-01');
         const monthsDiff = (date1.getFullYear() - date2.getFullYear()) * 12 + (date1.getMonth() - date2.getMonth());
-        
-        let calculatedGap = MIN_GAP + (monthsDiff * 15);
+
+        let calculatedGap = MIN_GAP + (monthsDiff * 50);
         if (calculatedGap > MAX_GAP) calculatedGap = MAX_GAP;
-        
-        currentY += calculatedGap;
+
+        // calculate next Y position
+        currentY += prevDateHeight + calculatedGap;
         yMap[uniqueDates[i]] = currentY;
     }
 }
@@ -154,20 +174,20 @@ function renderNodes() {
         const el = document.createElement('div');
         el.className = `node ${n.status === 'Active' ? 'active-node' : ''}`;
         el.id = n.id;
-        
+
         // prevent collisions
         const baseTop = yMap[n.date];
         const collisionKey = `${n.lane_id}-${baseTop}`;
         const collisionCount = collisionMap[collisionKey] || 0;
-        
-        const finalTop = baseTop + (collisionCount * 110);
+
+        const finalTop = baseTop + (collisionCount * 140);
         collisionMap[collisionKey] = collisionCount + 1;
         if (finalTop > maxRenderedY) maxRenderedY = finalTop;
 
         el.style.top = `${finalTop}px`;
         el.style.left = '50%';
         el.style.borderColor = n.genColor;
-        
+
         // glow and badge when active
         if (n.status === 'Active') {
             el.style.setProperty('--glow-color', `${n.genColor}55`);
@@ -175,7 +195,7 @@ function renderNodes() {
         }
         const statusClass = n.status === 'Active' ? 'badge-active' : 'badge-retired';
         let badgesHTML = `<span class="badge ${statusClass}">${n.status}</span>`;
-        
+
         // add project badge
         if (n.projectName) {
             const bg = n.projectColor || '#1e293b';
@@ -230,7 +250,7 @@ function drawEdges() {
 
         const curveOffsetY = Math.max(Math.abs(startY - endY) / 2.5, 40);
         const pathData = `M ${startX} ${startY} C ${startX} ${startY - curveOffsetY}, ${endX} ${endY + curveOffsetY}, ${endX} ${endY}`;
-        
+
         // create path
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
         path.setAttribute('d', pathData);
@@ -257,9 +277,9 @@ function highlightGraph(hoveredId) {
     // get nodes to be highlighted
     let connectedIds = new Set([hoveredId]);
     edges.forEach(e => {
-        if (e.source === hoveredId || e.target === hoveredId) { 
-            connectedIds.add(e.source); 
-            connectedIds.add(e.target); 
+        if (e.source === hoveredId || e.target === hoveredId) {
+            connectedIds.add(e.source);
+            connectedIds.add(e.target);
         }
     });
 
@@ -289,10 +309,10 @@ function clearHighlight() {
 }
 
 // side panel open
-window.openPanel = function(n) {
+window.openPanel = function (n) {
     document.getElementById('sp-gen').innerText = `${n.genId.toUpperCase()}`;
     document.getElementById('sp-title').innerText = n.title;
-    
+
     // badges
     const statusClass = n.status === 'Active' ? 'badge-active' : 'badge-retired';
     let badgesHTML = `<span class="badge ${statusClass}">${n.status}</span>`;
@@ -304,13 +324,13 @@ window.openPanel = function(n) {
 
     let extraInfoHTML = '';
     let combinedInfo = [];
-    
+
     // creator info
     if (n.creator) {
         const formattedCreator = n.creator.startsWith('@') ? n.creator : `@${n.creator}`;
         combinedInfo.push(formattedCreator);
     }
-    
+
     // repository info
     if (n.link) {
         const safeUrl = n.link.startsWith('http') ? n.link : `https://${n.link}`;
@@ -351,8 +371,8 @@ window.openPanel = function(n) {
 }
 
 // side panel close
-window.closePanel = function() { 
-    if (panel) panel.classList.remove('open'); 
+window.closePanel = function () {
+    if (panel) panel.classList.remove('open');
 }
 
 // start page
