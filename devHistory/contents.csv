@@ -1,80 +1,80 @@
 ﻿node_id,title,creator,link,tech_stack,description
 
-taskrit-frontend,Frontend,D3vle0,https://github.com/minoza-ai/Taskrit-frontend,,
-taskrit-backend,Main Backend,D3vle0,https://github.com/minoza-ai/Taskrit-backend,,
-taskrit-teaming,Teaming Engine,taewook427,https://github.com/minoza-ai/Taskrit-teaming,,
-taskrit-Chatting,Chatting,D3vle0,https://github.com/minoza-ai/Taskrit-Chatting,,
-taskrit-asset,Asset Storage,taewook427,https://github.com/minoza-ai/Taskrit-asset,,
+taskrit-frontend,Frontend,D3vle0,https://github.com/minoza-ai/Taskrit-frontend,TypeScript React TailWind-CSS Vite Solana,Taskrit의 팀 매칭 채팅 통화 솔라나 지갑을 연동하는 프론트엔드  A frontend of Taskrit integrating team matching chatting calls and Solana wallet
+taskrit-backend,Main Backend,D3vle0,https://github.com/minoza-ai/Taskrit-backend,TypeScript Node.js MongoDB Solana JWT,Solana 결제와 AI 팀 매칭 기능을 통합하는 핵심 백엔드  Main backend integrating Solana payments and AI team matching features
+taskrit-teaming,Teaming Engine,taewook427,https://github.com/minoza-ai/Taskrit-teaming,Python FastAPI MongoDB Qdrant Gemini-API ELO-Rating,벡터 검색과 AI기반 하이브리드 팀 매칭 엔진  Hybrid team matching engine based on vector search and AI
+taskrit-Chatting,Chatting,D3vle0,https://github.com/minoza-ai/Taskrit-Chatting,Python FastAPI MongoDB WebSocket,실시간 채팅과 통화 및 메시징 처리 마이크로서비스  Real-time chat calls and messaging microservice
+taskrit-asset,Asset Storage,taewook427,https://github.com/minoza-ai/Taskrit-asset,Python FastAPI,에셋 파일 저장을 담당하는 마이크로서비스  A microservice storing asset files
 
-organization-language-readme-stats,Organization Language Stats,D3vle0,https://github.com/k-atusa/organization-language-readme-stats,,
-mc-ping-check,Minecraft Ping Check,D3vle0,https://github.com/k-atusa/mc-ping-check,,
-ets-readme-counter,ETS Counter,D3vle0,https://github.com/k-atusa/ets-readme-counter,,
-hugo-protector,Hugo Protector,D3vle0,https://github.com/k-atusa/hugo-protector,,
+organization-language-readme-stats,Organization Language Stats,D3vle0,https://github.com/k-atusa/organization-language-readme-stats,TypeScript React Next.js GitHub-API,깃허브 조직의 언어 사용량을 집계해 보여줌  Shows GitHub organization language stats
+mc-ping-check,Minecraft Ping Check,D3vle0,https://github.com/k-atusa/mc-ping-check,TypeScript Node.js,마인크래프트 서버 상태 모니터링  MineCraft server status monitoring
+ets-readme-counter,ETS Counter,D3vle0,https://github.com/k-atusa/ets-readme-counter,TypeScript Next.js Vercel,군돌이 스타일 전역일 계산기  Creates real-time military service progress svg which is embedable to markdown file
+hugo-protector,Hugo Protector,D3vle0,https://github.com/k-atusa/hugo-protector,JavaScript Node.js AES-GCM PBKDF2,정적 사이트에서 콘텐츠를 암호화해 저장하고 비밀번호를 입력하면 복호화해 보여줌  A client-side toolkit that encrypts content and decrypts them upon password
 asmr,ASMR,D3vle0,https://github.com/k-atusa/ASMR,,
 humphreys-map,Humphreys Map,D3vle0,https://github.com/k-atusa/humphreys-map,,
 lost-media-archive,IPFS Archive,D3vle0,https://github.com/k-atusa/lost-media-archive,,
-barracks-layout-simulator,Barracks Simulator,D3vle0,https://github.com/k-atusa/barracks-layout-simulator,,
-zkzzk ,Zkzzk Video Manager,D3vle0,https://github.com/k-atusa/zkzzk,,
+barracks-layout-simulator,Barracks Simulator,D3vle0,https://github.com/k-atusa/barracks-layout-simulator,TypeScript React Vite Three.js,육군 배럭 가구배치 시뮬레이터  Army barracks furniture layout simulator
+zkzzk ,Zkzzk Video Manager,D3vle0,https://github.com/k-atusa/zkzzk,Python JavaScript Flask SQLite FFmpeg Naver-API,치지직 방송 자동 녹화 및 VOD 관리 웹 서비스  A web service for automatic Chzzk live recording and VOD management 
 katusa-os-web,KATUSA OS web,D3vle0,https://github.com/k-atusa/landing,,
 fento-c,Femto-C,taewook427,https://github.com/k-atusa/femto-C,,
 
-c-practice,C test,taewook427,https://github.com/taewook427/CSAItest,,
-java-practice,Java test,taewook427,https://github.com/taewook427/CSAItest,,
-r-practice,R test,taewook427,https://github.com/taewook427/CSAItest,,
-interpreter1,만들면서 배우는 인터프리터,taewook427,https://github.com/taewook427/CSAItest,,
-compiler1,만들면서 배우는 컴파일러 첫걸음,taewook427,https://github.com/taewook427/CSAItest,,
-bkscript2,BKscript2,taewook427,https://github.com/taewook427/CSAItest,,
+c-practice,C test,taewook427,https://github.com/taewook427/CSAItest,C DataStructure,C로 자료구조 연습  Data structure parctice in C
+java-practice,Java test,taewook427,https://github.com/taewook427/CSAItest,Java,자바 기초 프로그래밍  Java basic programming
+r-practice,R test,taewook427,https://github.com/taewook427/CSAItest,R Statistics,R 기초 자료분석  R basic data analysis
+interpreter1,만들면서 배우는 인터프리터,taewook427,https://github.com/taewook427/CSAItest,C++ Interpreter,도서 실습 인터프리터 코드  Book Practice Interpreter Code
+compiler1,만들면서 배우는 컴파일러 첫걸음,taewook427,https://github.com/taewook427/CSAItest,C Compiler,도서 실습 컴파일러 코드  Book Practice Compiler Code
+bkscript2,BKscript2,taewook427,https://github.com/taewook427/CSAItest,C++ BK Compiler LL(1),자체 프로그래밍 언어 제작 실습  Making own programming language
 
-y-bootcamp,2024 연세의대 부트캠프,taewook427,https://github.com/taewook427/CSAItest,,
-y-student,2024 연세 학생스터디,taewook427,https://github.com/taewook427/CSAItest,,
-dshs,동성고등학교 강의용,taewook427,https://github.com/taewook427/CSAItest,,
-y-grade1,연세대 1학년 강의분석,taewook427,https://github.com/taewook427/WebMain,,
-y-lteam2,연세의대 리더십팀프로젝트,taewook427,https://github.com/taewook427/lteam_test,,
-py-copycheck,Python Copy Check,taewook427,https://github.com/taewook427/WebMain,,
-dev-history,Dev History,taewook427,https://github.com/taewook427/WebMain,,
+y-bootcamp,2024 연세의대 부트캠프,taewook427,https://github.com/taewook427/CSAItest,Python NumPy Pandas Scikit Keras CNN MedicalAI,의료 데이터 활용하여 데이터 전처리 PCA 의사결정트리 CNN 모델 실습  Practice data preprocessing PCA Decision Trees and CNN using medical datasets
+y-student,2024 연세 학생스터디,taewook427,https://github.com/taewook427/CSAItest,Python NumPy,퍼셉트론 역전파 MNIST 손글씨 인식을 바닥부터 구현  Build perceptrons activation functions and backpropagation from scratch
+dshs,동성고등학교 강의용,taewook427,https://github.com/taewook427/CSAItest,Python Keras LSTM,학생 강의용 언어모델과 심장마비 예측 모델  Text model and heart failure model for highschool lecture
+y-grade1,연세대 1학년 강의분석,taewook427,https://github.com/taewook427/WebMain,JavaScript,에브리타임 담은수와 강의실 정원을 비교하여 수강신청 경쟁률 계산  Predicts course registration competition by comparing application numbers with room capacities
+y-lteam2,연세의대 리더십팀프로젝트,taewook427,https://github.com/taewook427/lteam_test,JavaScript Python Selenium,연세의대생의 성적 확인서와 교과과정 PDF 데이터를 분석하여 진급 및 부전공 이수 요건 충족 여부를 자동으로 판정  Analyzes academic transcripts and curriculum data to automatically evaluate promotion and minor requirement status for Yonsei Medical students
+py-copycheck,Python Copy Check,taewook427,https://github.com/taewook427/WebMain,JavaScript LongestCommonSubsequence,변수명 연산구조 텍스트 동일성으로 두 파이썬 코드의 유사도 측정  Checks similarity between two Python codes using names control flow and text identity
+dev-history,Dev History,taewook427,https://github.com/taewook427/WebMain,JavaScript CSV,개별 프로젝트의 기술 도메인 세대 영향 관계를 시각화하는 인터랙티브 그래프  An interactive graph that visualizes the technical domains generations and dependencies of projects
 
-k1-kdm,KDM1,taewook427,https://github.com/taewook427/Kutil4,,
-k1-time,Windows Timer 1,taewook427,https://github.com/taewook427/Kutil4,,
-k1-graph,Graph Drawer 1,taewook427,https://github.com/taewook427/Kutil4,,
-k2-kdm,KDM2,taewook427,https://github.com/taewook427/Kutil4,,
-k2-time,Windows Timer 2,taewook427,https://github.com/taewook427/Kutil4,,
-k2-bkscript,BKscript1,taewook427,https://github.com/taewook427/Kutil4,,
-k2-this-is-bk,BK fan site,taewook427,https://github.com/taewook427/Kutil4,,
-k3-lib,Kutil3-lib,taewook427,https://github.com/taewook427/Kutil4,,
-k3-kdm,KDM3,taewook427,https://github.com/taewook427/Kutil4,,
-k3-time,Windows Timer 3,taewook427,https://github.com/taewook427/Kutil4,,
-k4-lib,Kutil4-lib,taewook427,https://github.com/taewook427/Kutil4,,
-k4-kdm,KDM4,taewook427,https://github.com/taewook427/Kutil4,,
-k4-kv,KVault4,taewook427,https://github.com/taewook427/Kutil4,,
-k4-kaesl,KAESL1,taewook427,https://github.com/taewook427/Kutil4,,
-k4-kcom,KCOM1,taewook427,https://github.com/taewook427/Kutil4,,
+k1-kdm,KDM1,taewook427,https://github.com/taewook427/Kutil4,Python TkInter SHA2,초기형 파일 암호화 앱으로 알고리즘에 결함이 있었다  Early file encryption that has algorithm flaws
+k1-time,Windows Timer 1,taewook427,https://github.com/taewook427/Kutil4,Python TkInter,간단한 초단위 시계  A simple second clock
+k1-graph,Graph Drawer 1,taewook427,https://github.com/taewook427/Kutil4,Python TkInter Parser,수식을 파싱하여 그래프를 그려줌  Parses formula and draws a graph
+k2-kdm,KDM2,taewook427,https://github.com/taewook427/Kutil4,Python TkInter SHA3 AES-CBC,초기 파일 암호화 앱으로 KDM 핵심 기능 일부가 처음 도입되었다  Early file encryption that some of the core features of KDM were first introduced
+k2-time,Windows Timer 2,taewook427,https://github.com/taewook427/Kutil4,Python TkInter,화면 잠금이 도입된 초단위 시계  A second clock with screen lock
+k2-bkscript,BKscript1,taewook427,https://github.com/taewook427/Kutil4,Python BK Parser,BK 어록으로 된 간단한 스크립트 파서  A simple script parser with BK saying
+k2-this-is-bk,BK fan site,taewook427,https://github.com/taewook427/Kutil4,JavaScript BK,BK 정보를 알려주는 팬 사이트  A fan site with information of BK
+k3-lib,Kutil3-lib,taewook427,https://github.com/taewook427/Kutil4,Python SHA3 AES-CBC PIL,아카이빙 이미지 기반 은닉 향상된 성능의 암호화가 통합된 3세대 라이브러리  gen3 library integrating archiving image-based stealth and enhanced performance encryption
+k3-kdm,KDM3,taewook427,https://github.com/taewook427/Kutil4,Python TkInter,대부분의 KDM 핵심 특징이 등장한 파일 암호화 앱  File encryption with most of core features of KDM
+k3-time,Windows Timer 3,taewook427,https://github.com/taewook427/Kutil4,Python TkInter,타이머와 스톱워치가 추가된 초단위 시계  Second clock with added timer and stopwatch
+k4-lib,Kutil4-lib,taewook427,https://github.com/taewook427/Kutil4,Python Golang Scrypt SHA3 AES-CBC PIL,알고리즘이 현대화되고 하이브리드 구조로 성능이 향상된 4세대 라이브러리  gen4 library with modernized algorithms and improved performance through a hybrid structure
+k4-kdm,KDM4,taewook427,https://github.com/taewook427/Kutil4,Python TkInter,완전하지 않으나 쓸만해진 파일 암호화 앱  Not complete but usable file encryption
+k4-kv,KVault4,taewook427,https://github.com/taewook427/Kutil4,Python TkInter DFS,계층을 나눠 구현한 암호화 가상 파일 시스템  Layered encrypted virtual file system
+k4-kaesl,KAESL1,taewook427,https://github.com/taewook427/Kutil4,Python Golang Java,크로스 플랫폼을 고려하기 시작한 암호화 라이브러리  Cryptographic libraries that have started considering cross-platform
+k4-kcom,KCOM1,taewook427,https://github.com/taewook427/Kutil4,Golang,4세대 라이브러리 기술을 차용한 CLI 암호화 도구  CLI encryption tool utilizing gen4 library technology
 
-k5-lib,RealUse5-lib,taewook427,https://github.com/taewook427/RealUse5,,
-k5-websvr,RealUse5-web,taewook427,https://github.com/taewook427/RealUse5,,
-k5-signtool,Signtool,taewook427,https://github.com/taewook427/RealUse5,,
-k5-manager,Program Manager,taewook427,https://github.com/taewook427/RealUse5,,
-k5-clock,Clock,taewook427,https://github.com/taewook427/RealUse5,,
-k5-convs,File Converter,taewook427,https://github.com/taewook427/RealUse5,,
-k5-kdm,KDM5,taewook427,https://github.com/taewook427/RealUse5,,
-k5-kv,KVault5,taewook427,https://github.com/taewook427/RealUse5,,
-k5-kmap,Kmap,taewook427,https://github.com/taewook427/RealUse5,,
-k5-kmacro,Kmacro,taewook427,https://github.com/taewook427/RealUse5,,
-k5-kpwm,KPWM5,taewook427,https://github.com/taewook427/RealUse5,,
-k5-kscript,kscript5,taewook427,https://github.com/taewook427/RealUse5,,
-k5-ksync,Ksync,taewook427,https://github.com/taewook427/RealUse5,,
-k5-tlog,Test Log,taewook427,https://github.com/taewook427/RealUse5,,
-k5-ext,Video Extension,taewook427,https://github.com/taewook427/RealUse5,,
+k5-lib,RealUse5-lib,taewook427,https://github.com/taewook427/RealUse5,Python Golang Scrypt AES-CBC PIL,아카이빙 암호화 이미지 기반 은닉 통신 기능이 통합된 5세대 라이브러리  gen5 library with integrated archiving encryption image-based stealth and communication functions
+k5-websvr,RealUse5-web,taewook427,https://github.com/taewook427/RealUse5,JavaScript,디자인이 개선된 사용자용 소개 및 설명서 웹  User introduction and manual web with improved design
+k5-signtool,Signtool,taewook427,https://github.com/taewook427/RealUse5,Golang Windows,윈도우 전자서명 도구 래퍼  Windows digital signature tool wrapper
+k5-manager,Program Manager,taewook427,https://github.com/taewook427/RealUse5,Python TkInter,사용자용 패키지 매니저로 강력했으나 무겁고 크로스 플랫폼 지원이 제한적이었다  Powerful user package manager but was heavy and had limited cross-platform support
+k5-clock,Clock,taewook427,https://github.com/taewook427/RealUse5,Python TkInter,3세대 초단위 시계에서 디자인 개선  gen3 second watch with improved design
+k5-convs,File Converter,taewook427,https://github.com/taewook427/RealUse5,Python TkInter PIL FFmpeg pypdf,이미지 동영상 파일 통합 변환 도구  Integrated image video and file conversion tool
+k5-kdm,KDM5,taewook427,https://github.com/taewook427/RealUse5,Python Golang TkInter,파일 아카이빙 암호화 서명 통합 데이터 매니저  File archiving encryption signature integrated data manager
+k5-kv,KVault5,taewook427,https://github.com/taewook427/RealUse5,Python Golang TkInter,청크화 암호화 가상 파일 시스템 Chunked encrypted virtual file system
+k5-kmap,Kmap,taewook427,https://github.com/taewook427/RealUse5,Python TkInter,점과 선으로 그려진 삼차원 지도  A three-dimensional map drawn with points and lines
+k5-kmacro,Kmacro,taewook427,https://github.com/taewook427/RealUse5,Python Golang Selenium PyAutoGUI,kscript5 기반 브라우저와 화면 자동화  kscript5-based browser and screen automation
+k5-kpwm,KPWM5,taewook427,https://github.com/taewook427/RealUse5,Python TkInter,비밀번호와 기밀 문서 에디터  Password and confidential document editor
+k5-kscript,kscript5,taewook427,https://github.com/taewook427/RealUse5,Python Golang Compiler,파이썬 기반 문법을 가진 간단한 컴파일러  A simple compiler based on Python grammar
+k5-ksync,Ksync,taewook427,https://github.com/taewook427/RealUse5,Golang,폴더 동기화 도구  Folder synchronization tool
+k5-tlog,Test Log,taewook427,https://github.com/taewook427/RealUse5,Golang,타임스탬프 기반 로그 기록 분할 병합 도구  Timestamp-based log record splitting and merging tool
+k5-ext,Video Extension,taewook427,https://github.com/taewook427/RealUse5,FFmped yt-dlp,비디오 도구  Video tools
 
-k6-linecount,Line Count,taewook427,https://github.com/taewook427/Kutil6,,
-k6-localhub,Local Hub,taewook427,https://github.com/taewook427/Kutil6,,
-k6-unitconv,Unit Converter,taewook427,https://github.com/taewook427/Kutil6,,
+k6-linecount,Line Count,taewook427,https://github.com/taewook427/Kutil6,R Python,특정 폴더 내 코드 및 데이터 파일의 라인 수를 계산하고 그래프로 시각화  Visualizes line counts for code and data files within a specific folder
+k6-localhub,Local Hub,taewook427,https://github.com/taewook427/Kutil6,Golang Java JavaScript Android NanoHTTPD,LAN 환경에서 텍스트와 파일을 공유하는 앱으로 유니코드 오류가 있었다  App that shares text and files in a LAN environment but has unicode error
+k6-unitconv,Unit Converter,taewook427,https://github.com/taewook427/Kutil6,Java Android,단위 변환기로 위장한 노트 앱이나 암호화 기능이 없었다  Note app disguised as a unit converter without encryption
 
 usag-lib,USAG-Lib,taewook427,https://github.com/k-atusa/USAG-Lib,,
 aft,AFT,taewook427,https://github.com/k-atusa/AFT,,
 metrics,Metrics Vault,taewook427,https://github.com/k-atusa/Metrics,,
 yas-desktop,YAS-desktop,taewook427,https://github.com/k-atusa/YAS-desktop,,
 yas-web,YAS-web,taewook427,https://github.com/k-atusa/YAS-web,,
-yas-web-lite,YAS-web lite,taewook427,https://github.com/taewook427/WebMain,,
+yas-web-lite,YAS-web lite,taewook427,https://github.com/taewook427/WebMain,JavaScript USAG-Lib,YAS 핵심 기능을 지원하는 가벼운 정적 웹  A lite static web supports core functions of YAS
 yas-android,YAS-android,taewook427,https://github.com/k-atusa/YAS-android,,
 fc-server,FalseCrypt server,taewook427,https://github.com/k-atusa/FalseCrypt-server,,
 fc-desktop,FalseCrypt desktop,taewook427,https://github.com/k-atusa/FalseCrypt-desktop,,
