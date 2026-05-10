@@ -69,24 +69,24 @@ k6-linecount,Line Count,taewook427,https://github.com/taewook427/Kutil6,R Python
 k6-localhub,Local Hub,taewook427,https://github.com/taewook427/Kutil6,Golang Java JavaScript Android NanoHTTPD,LAN 환경에서 텍스트와 파일을 공유하는 앱으로 유니코드 오류가 있었다  App that shares text and files in a LAN environment but has unicode error
 k6-unitconv,Unit Converter,taewook427,https://github.com/taewook427/Kutil6,Java Android,단위 변환기로 위장한 노트 앱이나 암호화 기능이 없었다  Note app disguised as a unit converter without encryption
 
-usag-lib,USAG-Lib,taewook427,https://github.com/k-atusa/USAG-Lib,,
-aft,AFT,taewook427,https://github.com/k-atusa/AFT,,
-metrics,Metrics Vault,taewook427,https://github.com/k-atusa/Metrics,,
-yas-desktop,YAS-desktop,taewook427,https://github.com/k-atusa/YAS-desktop,,
-yas-web,YAS-web,taewook427,https://github.com/k-atusa/YAS-web,,
+usag-lib,USAG-Lib,taewook427,https://github.com/k-atusa/USAG-Lib,Python JavaScript Golang Java Argon2 AES-GCM RSA ECC PQC-ML ZIP64 TAR-PAX OpenCV,다양한 보조도구와 표준적이고 확장 가능한 암호화 아카이빙 기능을 가진 핵심 엔진  A core engine with various tools and standard scalable encrypted archiving capabilities
+aft,AFT,taewook427,https://github.com/k-atusa/AFT,Golang Fyne2 USAG-Lib,데스크탑 키 암호화 스토리지  Desktop key encryption storage
+metrics,Metrics Vault,taewook427,https://github.com/k-atusa/Metrics,Java Android USAG-Lib,안드로이드 로컬 암호화 스토리지  Android local encryption storage
+yas-desktop,YAS-desktop,taewook427,https://github.com/k-atusa/YAS-desktop,Golang Fyne2 USAG-Lib TCP,아카이빙 서명 암호화 등 종합 보안 도구  Comprehensive security tool including archiving signatures and encryption
+yas-web,YAS-web,taewook427,https://github.com/k-atusa/YAS-web,JavaScript TypeScript Tor USAG-Lib,YAS 기능을 웹으로 구현하고 안전하게 공유하는 서비스  A service that implements YAS functions on the web and shares securely
 yas-web-lite,YAS-web lite,taewook427,https://github.com/taewook427/WebMain,JavaScript USAG-Lib,YAS 핵심 기능을 지원하는 가벼운 정적 웹  A lite static web supports core functions of YAS
-yas-android,YAS-android,taewook427,https://github.com/k-atusa/YAS-android,,
-fc-server,FalseCrypt server,taewook427,https://github.com/k-atusa/FalseCrypt-server,,
-fc-desktop,FalseCrypt desktop,taewook427,https://github.com/k-atusa/FalseCrypt-desktop,,
-fc-android,FalseCrypt android,taewook427,https://github.com/k-atusa/FalseCrypt-android,,
+yas-android,YAS-android,taewook427,https://github.com/k-atusa/YAS-android,Java Android USAG-Lib TCP,YAS 안드로이드 버전  YAS Android version
+fc-server,FalseCrypt server,taewook427,https://github.com/k-atusa/FalseCrypt-server,Golang RestAPI E2EE DistributedSystem,종단간 암호화 분산 파일시스템 서버 노드  End-to-end encryption distributed file system server node
+fc-desktop,FalseCrypt desktop,taewook427,https://github.com/k-atusa/FalseCrypt-desktop,Golang Fyne2 USAG-Lib E2EE DistributedSystem,암호화 로직 담당 데스크톱 클라이언트  Desktop client responsible for encryption logic
+fc-android,FalseCrypt android,taewook427,https://github.com/k-atusa/FalseCrypt-android,Java Android USAG-Lib E2EE DistributedSystem,FalseCrypt 핵심 기능이 지원되는 안드로이드 클라이언트  Android client supporting FalseCrypt core features
 
-connhub,Connection Hub,taewook427,https://github.com/k-atusa/ConnHub,,
-mediahub,Media Hub,taewook427,https://github.com/k-atusa/MediaHub,,
+connhub,Connection Hub,taewook427,https://github.com/k-atusa/ConnHub,Golang JavaScript Java NanoHTTPD,유니코드 지원과 사용자 편의성이 강화된 로컬 파일공유 서비스  Local file sharing service with enhanced Unicode support and user convenience
+mediahub,Media Hub,taewook427,https://github.com/k-atusa/MediaHub,Golang JavaScript USAG-Lib E2EE,서버 데이터 유출 없이 컨텐츠를 공유하는 웹 서비스  A web service that shares content without server data leakage
 
-k7-powerlog,PowerLog,taewook427,https://github.com/taewook427/ETS7,,
-k7-testlog,TestLog,taewook427,https://github.com/taewook427/ETS7,,
-k7-thetime,The Time,taewook427,https://github.com/taewook427/ETS7,,
-k7-syncit,Sync It,taewook427,https://github.com/taewook427/ETS7,,
-k7-picit,Picture It,taewook427,https://github.com/taewook427/ETS7,,
-k7-imgconv,Image Convert,taewook427,https://github.com/taewook427/ETS7,,
-k7-fileconv,File Convert,taewook427,https://github.com/taewook427/ETS7,,
+k7-powerlog,PowerLog,taewook427,https://github.com/taewook427/ETS7,Golang,부팅 로그 기록  Records boot logs
+k7-testlog,TestLog,taewook427,https://github.com/taewook427/ETS7,Golang VersionControl,코드 일련번호 기록 관리  Code serial number record management
+k7-thetime,The Time,taewook427,https://github.com/taewook427/ETS7,Golang Fyne2,다목적 초단위 시계  Multi-purpose second clock
+k7-syncit,Sync It,taewook427,https://github.com/taewook427/ETS7,Golang USAG-Lib TCP,LAN 네트워크로 안전하게 폴더 동기화  Securely synchronize folders over a LAN network
+k7-picit,Picture It,taewook427,https://github.com/taewook427/ETS7,Golang Fyne2,데이터 이미지 픽셀 임베딩  Embed data inside image pixels
+k7-imgconv,Image Convert,taewook427,https://github.com/taewook427/ETS7,Golang Fyne2,이미지 편집 병합 형식 등 에디터  Editor for image editing merging and formats
+k7-fileconv,File Convert,taewook427,https://github.com/taewook427/ETS7,Golang Fyne2,파일 병합이나 대량 처리 도구  File merging or bulk processing tool
