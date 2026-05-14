@@ -572,7 +572,7 @@
                 // UI File list
                 resultList.innerHTML = "";
                 extractedFiles.forEach(extFile => {
-                    const flatName = extFile.path.replace(/[/\\]/g, '.'); // replace seperater as dot
+                    const flatName = extFile.path.replace(/[/\\<>]/g, '.'); // replace seperater as dot
                     const li = document.createElement('li');
                     const blobUrl = URL.createObjectURL(extFile.data);
                     li.innerHTML = `📄 <strong>${flatName}</strong> : `; // filename
@@ -589,6 +589,7 @@
                     const aView = document.createElement('a');
                     aView.href = blobUrl;
                     aView.target = "_blank";
+                    aView.rel = "noopener";
                     aView.className = "download-btn";
                     aView.style.padding = "2px 8px";
                     aView.style.marginLeft = "4px";
@@ -601,7 +602,9 @@
 
             } catch (err) {
                 console.error(err);
-                resultList.innerHTML = `<li>❌ Decompressing Error: ${err.message}</li>`;
+                const li = document.createElement('li');
+                li.innerText = `❌ Decompressing Error: ${err.message}`;
+                resultList.appendChild(li);
             }
         };
     </script>
@@ -865,7 +868,7 @@
                     // show extracted files
                     resultList.innerHTML = "";
                     extractedFiles.forEach(extFile => {
-                        const flatName = extFile.path.replace(/[/\\]/g, '.'); // replace seperater as dot
+                        const flatName = extFile.path.replace(/[/\\<>]/g, '.'); // replace seperater as dot
                         const li = document.createElement('li');
                         const blobUrl = URL.createObjectURL(extFile.data);
                         li.innerHTML = `📄 <strong>${flatName}</strong> : `; // filename
@@ -882,6 +885,7 @@
                         const aView = document.createElement('a');
                         aView.href = blobUrl;
                         aView.target = "_blank";
+                        aView.rel = "noopener";
                         aView.className = "download-btn";
                         aView.style.padding = "2px 8px";
                         aView.style.marginLeft = "4px";
@@ -1104,7 +1108,7 @@
                     // show extracted files
                     resultList.innerHTML = "";
                     extractedFiles.forEach(extFile => {
-                        const flatName = extFile.path.replace(/[/\\]/g, '.'); // replace seperater as dot
+                        const flatName = extFile.path.replace(/[/\\<>]/g, '.'); // replace seperater as dot
                         const li = document.createElement('li');
                         const blobUrl = URL.createObjectURL(extFile.data);
                         li.innerHTML = `📄 <strong>${flatName}</strong> : `; // filename
@@ -1121,6 +1125,7 @@
                         const aView = document.createElement('a');
                         aView.href = blobUrl;
                         aView.target = "_blank";
+                        aView.rel = "noopener";
                         aView.className = "download-btn";
                         aView.style.padding = "2px 8px";
                         aView.style.marginLeft = "4px";
