@@ -105,9 +105,9 @@
 
 <body>
     <!-- title -->
-    <h1>YAS Web lite R4</h1>
+    <h1>YAS Web lite R5</h1>
     <div class="shared-state">
-        <small>🔑 <strong>Key Status:</strong> Nothing Loaded</small>
+        <small id="key-status-bar">🔑 <strong>Key Status:</strong> Peer Pub: [❌] | My Pub: [❌] | My Pri: [❌]</small>
     </div>
 
     <!-- tab navigation -->
@@ -384,7 +384,7 @@
 
         <div class="module-section">
             <h3>🏠 My Public Key</h3>
-            <textarea id="key-my-pub" rows="3" placeholder="나의 공개키입니다." oninput="updateKeyMetrics('my-pub')"></textarea>
+            <textarea id="key-my-pub" rows="3" placeholder="나의 공개키를 입력하거나 업로드하세요." oninput="updateKeyMetrics('my-pub')"></textarea>
             <div class="key-info">
                 <small>Size: <span id="info-my-pub-size">0</span> bytes / CRC32: <span
                         id="info-my-pub-crc">-</span></small>
@@ -398,7 +398,7 @@
 
         <div class="module-section">
             <h3>🔒 My Private Key</h3>
-            <textarea id="key-my-pri" rows="3" placeholder="나의 개인키입니다. 보안에 주의하세요."
+            <textarea id="key-my-pri" rows="3" placeholder="나의 개인키를 입력하거나 업로드하세요."
                 oninput="updateKeyMetrics('my-pri')"></textarea>
             <div class="key-info">
                 <small>Size: <span id="info-my-pri-size">0</span> bytes / CRC32: <span
@@ -427,6 +427,13 @@
 
     <!-- common helper -->
     <script>
+        // public key storage
+        window.keyCache = {
+            'peer-pub': null,
+            'my-pub': null,
+            'my-pri': null
+        };
+
         // tab switch
         function switchTab(event, tabId) {
             document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
@@ -464,9 +471,9 @@
         }
 
         // get image header
-        async function getPrehead(imgType) {
+        async function getPrehead(encType, imgType) {
             if (imgType === 'none' || imgType === 'bin') return new Uint8Array(0);
-            const iconRes = await fetch(`https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Icons/data/aes_${imgType}.${imgType}`);
+            const iconRes = await fetch(`https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Icons/data/${encType}_${imgType}.${imgType}`);
             const iconBuf = new Uint8Array(await iconRes.arrayBuffer());
             const padLen = 128 - (iconBuf.length % 128);
             const prehead = new Uint8Array(iconBuf.length + padLen);
@@ -481,6 +488,13 @@
             const reader = new FileReader();
             reader.onload = (e) => document.getElementById(elementId).value = e.target.result;
             reader.readAsText(file);
+        }
+
+        // zerofill array
+        function zeroize(arr) {
+            if (arr && arr.byteLength > 0 && typeof arr.fill === 'function') {
+                arr.fill(0);
+            }
         }
     </script>
 
@@ -558,16 +572,30 @@
                 // UI File list
                 resultList.innerHTML = "";
                 extractedFiles.forEach(extFile => {
-                    const flatFileName = extFile.path.replace(/[/\\]/g, '.'); // replace dir separator with dot
+                    const flatName = extFile.path.replace(/[/\\]/g, '.'); // replace seperater as dot
                     const li = document.createElement('li');
-                    const a = document.createElement('a');
+                    const blobUrl = URL.createObjectURL(extFile.data);
+                    li.innerHTML = `📄 <strong>${flatName}</strong> : `; // filename
 
-                    a.href = URL.createObjectURL(extFile.data);
-                    a.download = flatFileName;
-                    a.className = "download-btn";
-                    a.innerHTML = `📄 <strong>${flatFileName}</strong> <small>(Download)</small>`;
+                    // Download
+                    const aDl = document.createElement('a');
+                    aDl.href = blobUrl;
+                    aDl.download = flatName;
+                    aDl.className = "download-btn";
+                    aDl.style.padding = "2px 8px";
+                    aDl.innerText = "⬇️ download";
 
-                    li.appendChild(a);
+                    // View
+                    const aView = document.createElement('a');
+                    aView.href = blobUrl;
+                    aView.target = "_blank";
+                    aView.className = "download-btn";
+                    aView.style.padding = "2px 8px";
+                    aView.style.marginLeft = "4px";
+                    aView.innerText = "🖼️ view";
+
+                    li.appendChild(aDl);
+                    li.appendChild(aView);
                     resultList.appendChild(li);
                 });
 
@@ -581,22 +609,22 @@
     <!-- sign tab -->
     <script type="module">
         // import module
-        import { AsymMaster } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Bencrypt/Bencrypt.js';
+        import { AsymMaster, Masker } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Bencrypt/Bencrypt.js';
         import { Encode64, Decode64 } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Bencode/Bencode.js';
+        const sgnMask = new Masker();
 
         // sign with my private
         window.handleSign = async function () {
             const fileInput = document.getElementById('sign-input-file');
             const sigBox = document.getElementById('signature-box');
             const algo = document.getElementById('sign-algo').value;
-            const priKeyText = document.getElementById('key-my-pri').value;
-            if (!fileInput.files[0] || !priKeyText) {
+            if (!fileInput.files[0] || !window.keyCache['my-pri']) {
                 return alert("Please select a file and provide a private key.");
             }
 
+            const priKeyBin = sgnMask.XOR(window.keyCache['my-pri']);
             try {
                 const am = new AsymMaster(algo);
-                const priKeyBin = Decode64(priKeyText, "#");
                 await am.Loadkey(null, priKeyBin);
 
                 const fileData = new Uint8Array(await fileInput.files[0].arrayBuffer());
@@ -606,6 +634,7 @@
             } catch (e) {
                 alert("Signature Error: " + e.message);
             }
+            zeroize(priKeyBin);
         };
 
         // verify with peer's public key
@@ -613,14 +642,13 @@
             const fileInput = document.getElementById('sign-input-file');
             const sigBox = document.getElementById('signature-box');
             const algo = document.getElementById('sign-algo').value;
-            const pubKeyText = document.getElementById('key-peer-pub').value;
-            if (!fileInput.files[0] || !sigBox.value || !pubKeyText) {
+            if (!fileInput.files[0] || !sigBox.value || !window.keyCache['peer-pub']) {
                 return alert("Please select a file, provide a signature, and provide a public key.");
             }
 
             try {
                 const am = new AsymMaster(algo);
-                const pubKeyBin = Decode64(pubKeyText, "#");
+                const pubKeyBin = window.keyCache['peer-pub'];
                 await am.Loadkey(pubKeyBin, null);
 
                 const fileData = new Uint8Array(await fileInput.files[0].arrayBuffer());
@@ -658,11 +686,11 @@
     <script type="module">
         // import module
         import { Opsec, Crc32, PadLen, PadFile } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Opsec/Opsec.js';
-        import { SymMaster, HashMaster, TestReader, TestWriter } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Bencrypt/Bencrypt.js';
-        import { Encode64, Decode64 } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Bencode/Bencode.js';
+        import { SymMaster, HashMaster, TestReader, TestWriter, Masker } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Bencrypt/Bencrypt.js';
+        import { Encode64, Decode64, NormPW } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Bencode/Bencode.js';
         import { ZipWriter, ZipReader } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Szip/Szip.js';
         import { TarWriter, TarReader } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Star/Star.js';
-
+        const pwMask = new Masker();
         window.currentPwKeyBuffer = new Uint8Array(0);
 
         // download password result text
@@ -681,10 +709,12 @@
                 document.getElementById('pw-key-size').innerText = '0';
                 return;
             }
-            const buffer = await file.arrayBuffer();
-            window.currentPwKeyBuffer = new Uint8Array(buffer).slice(0, 1024);
-            document.getElementById('pw-key-crc').innerText = Crc32(window.currentPwKeyBuffer).toUpperCase();
-            document.getElementById('pw-key-size').innerText = window.currentPwKeyBuffer.length;
+            let buffer = await file.arrayBuffer();
+            buffer = new Uint8Array(buffer).slice(0, 4096); // max 4KiB
+            document.getElementById('pw-key-crc').innerText = Crc32(buffer).toUpperCase();
+            document.getElementById('pw-key-size').innerText = buffer.length;
+            window.currentPwKeyBuffer = pwMask.XOR(buffer);
+            zeroize(buffer);
         };
 
         // --- 🔒 Encrypt ---
@@ -693,7 +723,8 @@
             const plainMsg = document.getElementById('pw-plain-text').value;
             const secretMsg = document.getElementById('pw-secret-text').value;
             const files = document.getElementById('pw-target-files').files;
-            const password = document.getElementById('pw-password').value;
+            const password = NormPW(document.getElementById('pw-password').value); // NFC UTF-8
+            const keyfile = pwMask.XOR(window.currentPwKeyBuffer);
 
             const imgType = document.getElementById('pw-opt-img').value;
             const packAlgo = document.getElementById('pw-opt-pack').value;
@@ -729,12 +760,12 @@
                     op.BodyAlgo = symAlgo;
 
                     // encrypt header
-                    const header = await op.Encpw(hashAlgo, password, window.currentPwKeyBuffer);
+                    const header = await op.Encpw(hashAlgo, password, keyfile);
                     const sm = new SymMaster(symAlgo, op.BodyKey);
                     const encryptedBody = await sm.EnBin(packedBuffer);
 
                     // write prehead, header and body
-                    const prehead = await getPrehead(imgType);
+                    const prehead = await getPrehead("aes", imgType);
                     const writer = new TestWriter();
                     await writer.write(prehead);
                     await op.Write(writer, header);
@@ -753,7 +784,7 @@
 
                 } else { // text mode encryption
                     document.getElementById('pw-result-text').value = "⏳ Encrypting text...";
-                    const header = await op.Encpw(hashAlgo, password, window.currentPwKeyBuffer);
+                    const header = await op.Encpw(hashAlgo, password, keyfile);
 
                     // write header
                     const writer = new TestWriter();
@@ -761,13 +792,18 @@
                     document.getElementById('pw-result-text').value = Encode64(writer.getValue(), "#", 80, 10);
                 }
 
-            } catch (e) { alert("Encryption failed: " + e.message); }
+            } catch (e) { alert("Encryption failed: " + e.message + `\n(PW ${password.length}B, KF ${keyfile.length}B)`); }
+
+            zeroize(password);
+            zeroize(keyfile);
+            document.getElementById('pw-password').value = "";
         };
 
         // --- 🔓 Decrypt ---
         window.handlePwDecrypt = async function () {
             // get UI values
-            const password = document.getElementById('pw-password').value;
+            const password = NormPW(document.getElementById('pw-password').value); // NFC UTF-8
+            const keyfile = pwMask.XOR(window.currentPwKeyBuffer);
             const files = document.getElementById('pw-target-files').files;
             const secretBoxText = document.getElementById('pw-secret-text').value;
             const resultTextArea = document.getElementById('pw-result-text');
@@ -793,7 +829,7 @@
 
                 // view header, decrypt
                 op.View(headerData);
-                await op.Decpw(password, window.currentPwKeyBuffer);
+                await op.Decpw(password, keyfile);
 
                 // show message
                 let combinedMsg = "";
@@ -829,14 +865,30 @@
                     // show extracted files
                     resultList.innerHTML = "";
                     extractedFiles.forEach(extFile => {
-                        const flatName = extFile.path.replace(/[/\\]/g, '.');
+                        const flatName = extFile.path.replace(/[/\\]/g, '.'); // replace seperater as dot
                         const li = document.createElement('li');
-                        const a = document.createElement('a');
-                        a.href = URL.createObjectURL(extFile.data);
-                        a.download = flatName;
-                        a.className = "download-btn";
-                        a.innerHTML = `📄 <strong>${flatName}</strong> <small>(Click to download)</small>`;
-                        li.appendChild(a);
+                        const blobUrl = URL.createObjectURL(extFile.data);
+                        li.innerHTML = `📄 <strong>${flatName}</strong> : `; // filename
+
+                        // Download
+                        const aDl = document.createElement('a');
+                        aDl.href = blobUrl;
+                        aDl.download = flatName;
+                        aDl.className = "download-btn";
+                        aDl.style.padding = "2px 8px";
+                        aDl.innerText = "⬇️ download";
+
+                        // View
+                        const aView = document.createElement('a');
+                        aView.href = blobUrl;
+                        aView.target = "_blank";
+                        aView.className = "download-btn";
+                        aView.style.padding = "2px 8px";
+                        aView.style.marginLeft = "4px";
+                        aView.innerText = "🖼️ view";
+
+                        li.appendChild(aDl);
+                        li.appendChild(aView);
                         resultList.appendChild(li);
                     });
                 } else if (files.length > 0) {
@@ -844,8 +896,12 @@
                 }
             } catch (e) {
                 resultList.innerHTML = "";
-                alert("Decryption failed: " + e.message);
+                alert("Decryption failed: " + e.message + `\n(PW ${password.length}B, KF ${keyfile.length}B)`);
             }
+
+            zeroize(password);
+            zeroize(keyfile);
+            document.getElementById('pw-password').value = "";
         };
     </script>
 
@@ -853,21 +909,11 @@
     <script type="module">
         // import module
         import { Opsec, PadLen, PadFile } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Opsec/Opsec.js';
-        import { SymMaster, TestReader, TestWriter } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Bencrypt/Bencrypt.js';
+        import { SymMaster, TestReader, TestWriter, Masker } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Bencrypt/Bencrypt.js';
         import { Encode64, Decode64 } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Bencode/Bencode.js';
         import { ZipWriter, ZipReader } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Szip/Szip.js';
         import { TarWriter, TarReader } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Star/Star.js';
-
-        // get loaded key from settings tab
-        function getLoadedKey(id) {
-            const text = document.getElementById(`key-${id}`)?.value.trim();
-            if (!text) return null;
-            try {
-                return Decode64(text, "#");
-            } catch (e) {
-                try { return Decode64(text, "!"); } catch (err) { return null; }
-            }
-        }
+        const pkMask = new Masker();
 
         // clear file selection utility
         window.clearPkFileSelection = function () {
@@ -895,9 +941,8 @@
             const doSign = document.getElementById('pk-opt-sign').checked;
             const enablePad = document.getElementById('pk-opt-pad').checked;
 
-            const peerPub = getLoadedKey('peer-pub');
-            const myPri = getLoadedKey('my-pri');
-
+            const peerPub = window.keyCache['peer-pub'];
+            const myPri = window.keyCache['my-pri'] ? pkMask.XOR(window.keyCache['my-pri']) : null;
             if (!peerPub) return alert("Peer public key is required. Please load it in Key Settings.");
             if (doSign && !myPri) return alert("My private key is required for signing.");
 
@@ -934,7 +979,7 @@
                     const encryptedBody = await sm.EnBin(packedBuffer);
 
                     // write prehead, header and body
-                    const prehead = await getPrehead(imgType);
+                    const prehead = await getPrehead("cloud", imgType);
                     const writer = new TestWriter();
                     await writer.write(prehead);
                     await op.Write(writer, header);
@@ -962,6 +1007,7 @@
                 }
 
             } catch (e) { alert("Encryption failed: " + e.message); }
+            zeroize(myPri);
         };
 
         // --- 🔓 Decrypt ---
@@ -974,11 +1020,9 @@
 
             // check sign option
             const doSign = document.getElementById('pk-opt-sign').checked;
-
-            const myPri = getLoadedKey('my-pri');
-            const myPub = getLoadedKey('my-pub');
-            const peerPub = getLoadedKey('peer-pub');
-
+            const myPri = window.keyCache['my-pri'] ? pkMask.XOR(window.keyCache['my-pri']) : null;
+            const myPub = window.keyCache['my-pub'];
+            const peerPub = window.keyCache['peer-pub'];
             if (!myPri) return alert("My private key is required for decryption. Please load it in Key Settings.");
             if (doSign && (!myPub || !peerPub)) return alert("Both My public key and Peer public key are required for signature verification.");
 
@@ -1060,14 +1104,30 @@
                     // show extracted files
                     resultList.innerHTML = "";
                     extractedFiles.forEach(extFile => {
-                        const flatName = extFile.path.replace(/[/\\]/g, '.');
+                        const flatName = extFile.path.replace(/[/\\]/g, '.'); // replace seperater as dot
                         const li = document.createElement('li');
-                        const a = document.createElement('a');
-                        a.href = URL.createObjectURL(extFile.data);
-                        a.download = flatName;
-                        a.className = "download-btn";
-                        a.innerHTML = `📄 <strong>${flatName}</strong> <small>(Download)</small>`;
-                        li.appendChild(a);
+                        const blobUrl = URL.createObjectURL(extFile.data);
+                        li.innerHTML = `📄 <strong>${flatName}</strong> : `; // filename
+
+                        // Download
+                        const aDl = document.createElement('a');
+                        aDl.href = blobUrl;
+                        aDl.download = flatName;
+                        aDl.className = "download-btn";
+                        aDl.style.padding = "2px 8px";
+                        aDl.innerText = "⬇️ download";
+
+                        // View
+                        const aView = document.createElement('a');
+                        aView.href = blobUrl;
+                        aView.target = "_blank";
+                        aView.className = "download-btn";
+                        aView.style.padding = "2px 8px";
+                        aView.style.marginLeft = "4px";
+                        aView.innerText = "🖼️ view";
+
+                        li.appendChild(aDl);
+                        li.appendChild(aView);
                         resultList.appendChild(li);
                     });
                 } else if (files.length > 0) {
@@ -1077,17 +1137,18 @@
                 resultList.innerHTML = "";
                 alert("❌ Decryption failed: " + e.message);
             }
+            zeroize(myPri);
         };
     </script>
 
     <!-- key settings tab -->
     <script type="module">
         // import modules
-        import { AsymMaster } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Bencrypt/Bencrypt.js';
+        import { AsymMaster, Masker } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Bencrypt/Bencrypt.js';
         import { Crc32 } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Opsec/Opsec.js';
         import { Encode64, Decode64 } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Bencode/Bencode.js';
-
         const keyIDs = ['peer-pub', 'my-pub', 'my-pri'];
+        const keyMask = new Masker();
 
         // update key info
         window.updateKeyMetrics = function (id) {
@@ -1097,20 +1158,33 @@
             const crcEl = document.getElementById(`info-${id}-crc`);
 
             if (!text) {
+                window.keyCache[id] = null; // set null if not exists
                 sizeEl.innerText = '0';
                 crcEl.innerText = '-';
+                updateSharedState(); // UI update
                 return;
             }
 
             try {
-                // decode YAS format
                 const bin = Decode64(text, "#");
                 sizeEl.innerText = bin.length;
-                crcEl.innerText = Crc32(bin).toUpperCase(); // CRC32 calculation
-                updateSharedState();
+                const crc = Crc32(bin).toUpperCase();
+                crcEl.innerText = crc;
+
+                // mask if private key
+                if (id === 'my-pri') {
+                    window.keyCache[id] = keyMask.XOR(bin);
+                    zeroize(bin);
+                } else {
+                    window.keyCache[id] = bin;
+                }
+                updateSharedState(); // UI update
             } catch (e) {
+                window.keyCache[id] = null;
                 crcEl.innerText = 'Invalid Format';
             }
+
+            textarea.value = "";
         };
 
         // generate key
@@ -1120,15 +1194,13 @@
 
             try {
                 const am = new AsymMaster(algo);
-                const [pub, pri] = await am.Genkey(); // [pub, pri] Uint8Array return
-
-                // encode and insert into textbox
-                document.getElementById('key-my-pub').value = Encode64(pub, "#");
-                document.getElementById('key-my-pri').value = Encode64(pri, "#");
-
-                updateKeyMetrics('my-pub');
-                updateKeyMetrics('my-pri');
+                const [pub, pri] = await am.Genkey();
+                window.keyCache['my-pub'] = pub;
+                window.keyCache['my-pri'] = keyMask.XOR(pri);
+                zeroize(pri);
+                updateSharedState();
                 alert(`${algo} key pair generated successfully.`);
+
             } catch (e) {
                 alert("Key generation failed: " + e.message);
             }
@@ -1148,19 +1220,28 @@
 
         // download key
         window.downloadKey = function (id) {
-            const text = document.getElementById(`key-${id}`).value;
-            if (!text) return alert("No key data to save.");
-            const blob = new Blob([text], { type: 'text/plain' });
+            const key = id == 'my-pri' ? keyMask.XOR(window.keyCache[id]): window.keyCache[id];
+            if (!key) return alert("No key data to save.");
+            const blob = new Blob([Encode64(key, "#")], { type: 'text/plain' });
+            if (id === 'my-pri') zeroize(key);
             triggerDownload(blob, `key_${id}.txt`);
         };
 
         // update shared state
         function updateSharedState() {
-            const myPub = document.getElementById('key-my-pub').value;
-            const stateEl = document.querySelector('.shared-state small');
-            if (myPub) {
-                stateEl.innerHTML = `🔑 <strong>Key Status:</strong> My Private Loaded (CRC: ${document.getElementById('info-my-pub-crc').innerText})`;
-            }
+            const stateEl = document.getElementById('key-status-bar');
+            const getLabel = (id) => {
+                if (!window.keyCache[id]) return '❌';
+                if (id === 'my-pri') {
+                    const bin = keyMask.XOR(window.keyCache[id]);
+                    const res = Crc32(bin).toUpperCase();
+                    zeroize(bin);
+                    return res;
+                } else {
+                    return Crc32(window.keyCache[id]).toUpperCase(); 
+                }
+            };
+            stateEl.innerHTML = `🔑 <strong>Key Status:</strong> Peer Pub: [${getLabel('peer-pub')}] | My Pub: [${getLabel('my-pub')}] | My Pri: [${getLabel('my-pri')}]`;
         }
     </script>
 
