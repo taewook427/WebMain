@@ -703,7 +703,7 @@
             safeDownload(new Blob([text], { type: "text/plain" }), "yas-msg.txt");
         };
 
-        // load key file (1024 bytes limit)
+        // load key file
         window.loadPwKeyFile = async function (event) {
             const file = event.target.files[0];
             if (!file) {

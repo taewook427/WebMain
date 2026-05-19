@@ -70,6 +70,7 @@ k6-localhub,Local Hub,taewook427,https://github.com/taewook427/Kutil6,Golang Jav
 k6-unitconv,Unit Converter,taewook427,https://github.com/taewook427/Kutil6,Java Android,단위 변환기로 위장한 노트 앱이나 암호화 기능이 없었다  Note app disguised as a unit converter without encryption
 
 usag-lib,USAG-Lib,taewook427,https://github.com/k-atusa/USAG-Lib,Python JavaScript Golang Java Argon2 AES-GCM RSA ECC PQC-ML ZIP64 TAR-PAX OpenCV,다양한 보조도구와 표준적이고 확장 가능한 암호화 아카이빙 기능을 가진 핵심 엔진  A core engine with various tools and standard scalable encrypted archiving capabilities
+usag-kox,USAG-KOX,taewook427,https://github.com/taewook427/USAG-KOX,Golang Java Android TCP,USAG 프로젝트용 확장 모듈  Extension module for project USAG
 aft,AFT,taewook427,https://github.com/k-atusa/AFT,Golang Fyne2 USAG-Lib,데스크탑 키 암호화 스토리지  Desktop key encryption storage
 metrics,Metrics Vault,taewook427,https://github.com/k-atusa/Metrics,Java Android USAG-Lib,안드로이드 로컬 암호화 스토리지  Android local encryption storage
 yas-desktop,YAS-desktop,taewook427,https://github.com/k-atusa/YAS-desktop,Golang Fyne2 USAG-Lib TCP,아카이빙 서명 암호화 등 종합 보안 도구  Comprehensive security tool including archiving signatures and encryption

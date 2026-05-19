@@ -70,6 +70,12 @@ k5-kv,mediahub
 k6-unitconv,metrics
 k6-linecount,usag-lib
 
+usag-lib,usag-kox
+usag-kox,k7-syncit
+usag-kox,aft
+usag-kox,yas-desktop
+usag-kox,fc-android
+
 uasg-lib,k7-syncit
 uasg-lib,k7-picit
 usag-lib,mediahub
