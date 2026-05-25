@@ -74,6 +74,8 @@ usag-lib,usag-kox
 usag-kox,k7-syncit
 usag-kox,aft
 usag-kox,yas-desktop
+usag-kox,yas-android
+usag-kox,fc-desktop
 usag-kox,fc-android
 
 uasg-lib,k7-syncit
@@ -84,7 +86,6 @@ usag-lib,yas-desktop
 usag-lib,yas-android
 usag-lib,yas-web
 usag-lib,yas-web-lite
-usag-lib,fc-server
 usag-lib,fc-desktop
 usag-lib,fc-android
 yas-desktop,fc-desktop

@@ -66,23 +66,22 @@ k5-tlog,util,realuse5,gen5,2024-11,2025-02,,Active
 k5-ext,util,realuse5,gen5,2024-11,2025-02,,Retired
 
 k6-linecount,util,kutil6,gen6,2025-10,2025-11,2026-04,Retired
-k6-localhub,web,kutil6,gen6,2025-10,2025-11,,Retired
-k6-unitconv,sec,kutil6,gen6,2025-10,2025-11,,Active
+k6-localhub,web,kutil6,gen6,2025-10,2025-11,2026-05,Retired
+k6-unitconv,sec,kutil6,gen6,2025-10,2025-11,2026-05,Retired
 
 usag-lib,sec,usag,gen7,2025-12,2026-04,,Active
-usag-kox,util,usag,gen7,2026-01,2026-05,,Active
+usag-kox,util,usag,gen7,2026-01,2026-06,,Active
 aft,sec,usag,gen7,2026-02,2026-05,,Active
-metrics,sec,usag,gen7,2026-05,,,In-Dev
+metrics,sec,usag,gen7,2026-05,2026-05,,Active
 yas-desktop,sec,usag,gen7,2026-02,2026-05,,Active
-yas-web,sec,usag,gen7,2026-02,,,In-Dev
+yas-web,sec,usag,gen7,2026-04,,,In-Dev
 yas-web-lite,sec,usag,gen7,2026-02,2026-04,,Active
-yas-android,sec,usag,gen7,2026-02,,,In-Dev
-fc-server,sec,usag,gen7,2026-06,,,In-Dev
+yas-android,sec,usag,gen7,2026-05,,,In-Dev
 fc-desktop,sec,usag,gen7,2026-06,,,In-Dev
 fc-android,sec,usag,gen7,2026-06,,,In-Dev
 
 connhub,web,why,gen7,2026-02,2026-05,,Active
-mediahub,web,why,gen7,2026-05,,,In-Dev
+mediahub,web,why,gen7,2026-07,,,In-Dev
 
 k7-powerlog,util,ets7,gen7,2026-07,,,In-Dev
 k7-testlog,util,ets7,gen7,2026-07,,,In-Dev
