@@ -7,8 +7,6 @@ java-practice,k5-kscript
 k5-kscript,bkscript2
 interpreter1,bkscript2
 compiler1,bkscript2
-bkscript2,femto-c
-k5-kscript,femto-c
 
 k2-this-is-bk,py-copycheck
 k2-this-is-bk,y-grade1
@@ -19,6 +17,7 @@ k6-localhub,connhub
 
 connhub,mediahub
 connhub,dev-history
+yas-web-lite.kzip-lite
 
 r-practice,dshs
 y-bootcamp,dshs

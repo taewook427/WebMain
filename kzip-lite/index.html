@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KZ-lite</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    
+    <style>
+        body { max-width: 800px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; margin-bottom: 20px; }
+        .container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 600px) { .container { grid-template-columns: 1fr; } }
+        .box { border: 1px solid var(--border); padding: 15px; border-radius: 8px; background: var(--background-alt); }
+        .dropzone { border: 2px dashed var(--border); padding: 25px 10px; text-align: center; cursor: pointer; border-radius: 6px; margin-bottom: 10px; font-size: 0.9em; }
+        .list { max-height: 150px; overflow-y: auto; font-size: 0.85em; list-style: none; padding: 0; margin: 5px 0; }
+        .list li { padding: 4px 0; border-bottom: 1px solid var(--border); word-break: break-all; }
+        .status { font-size: 0.85em; font-weight: bold; margin-top: 10px; padding: 6px; border-radius: 4px; display: none; }
+        .success { color: #28a745; }
+        .error { color: #dc3545; }
+        .info { color: #007bff; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>KZ-lite Web Archiver</h1>
+    </header>
+
+    <main class="container">
+        <section class="box">
+            <div id="drop-comp" class="dropzone">Drag & drop files or click to select</div>
+            <input type="file" id="in-comp" multiple style="display: none;">
+            <ul id="files-comp" class="list"></ul>
+            
+            <select id="fmt-comp">
+                <option value="zip" selected>.zip</option>
+                <option value="tar.gz">.tar.gz</option>
+                <option value="tar.xz">.tar.xz</option>
+                <option value="7z">.7z</option>
+            </select>
+
+            <button id="btn-comp" style="width: 100%;">Compress</button>
+            <div id="status-comp" class="status"></div>
+            <div id="dl-comp" style="margin-top: 10px; text-align: center;"></div>
+        </section>
+
+        <section class="box">
+            <div id="drop-decomp" class="dropzone">Drag & drop archive or click to select</div>
+            <input type="file" id="in-decomp" style="display: none;">
+            <div id="info-decomp" style="font-size:0.85em; margin-bottom: 10px; color: var(--text-muted);"></div>
+            
+            <button id="btn-decomp" style="width: 100%;">Decompress</button>
+            <div id="status-decomp" class="status"></div>
+            
+            <ul id="files-decomp" class="list" style="max-height: 180px;"></ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

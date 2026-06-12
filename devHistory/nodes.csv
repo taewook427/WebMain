@@ -15,8 +15,8 @@ humphreys-map,web,hump,,2025-10,,,In-Dev
 lost-media-archive,web,,,2026-02,,,In-Dev
 barracks-layout-simulator,web,hump,,2026-01,2026-02,,Active
 zkzzk,web,,,2025-08,2025-09,,Active
-katusa-os-web,web,,,2026-04,,,In-Dev
-femto-c,cs,,,2025-03,,,In-Dev
+katusa-landing,web,,,2026-04,2026-06,,Active
+logics,,,2026-06,2026-06,,Active
 
 c-practice,cs,,,2023-05,2023-06,2023-06,Retired
 java-practice,cs,,,2023-05,2023-06,2023-06,Retired
@@ -32,6 +32,7 @@ y-grade1,web,,,2024-02,2024-02,,Retired
 y-lteam2,web,,,2023-04,2023-11,2024-01,Retired
 py-copycheck,util,,,2023-10,2023-10,,Retired
 dev-history,web,,,2026-04,2026-05,,Active
+kzip-lite,web,,,2026-06,2026-06,,Active
 
 k1-kdm,sec,kutil1,gen1,2021-05,2021-06,2021-10,Retired
 k1-time,util,kutil1,gen1,2021-05,2021-06,2021-10,Retired
@@ -49,20 +50,20 @@ k4-kv,sec,kutil4,gen4,2023-05,2023-07,2025-02,Retired
 k4-kaesl,sec,kutil4,gen4,2023-05,2023-07,2023-09,Retired
 k4-kcom,sec,kutil4,gen4,2023-05,2023-08,2023-10,Retired
 
-k5-lib,sec,realuse5,gen5,2024-05,2024-11,,Active
+k5-lib,sec,realuse5,gen5,2024-05,2024-11,,Retired
 k5-websvr,web,realuse5,gen5,2025-02,2025-02,2025-03,Retired
 k5-signtool,sec,realuse5,gen5,2024-11,2025-02,,Retired
-k5-manager,util,realuse5,gen5,2024-11,2025-02,,Active
-k5-clock,util,realuse5,gen5,2024-11,2025-02,,Active
-k5-convs,util,realuse5,gen5,2024-11,2025-02,,Active
-k5-kdm,sec,realuse5,gen5,2024-11,2025-02,,Active
-k5-kv,sec,realuse5,gen5,2024-11,2025-02,,Active
+k5-manager,util,realuse5,gen5,2024-11,2025-02,,Retired
+k5-clock,util,realuse5,gen5,2024-11,2025-02,,Retired
+k5-convs,util,realuse5,gen5,2024-11,2025-02,,Retired
+k5-kdm,sec,realuse5,gen5,2024-11,2025-02,,Retired
+k5-kv,sec,realuse5,gen5,2024-11,2025-02,,Retired
 k5-kmap,util,realuse5,gen5,2024-11,2025-02,,Retired
 k5-kmacro,util,realuse5,gen5,2024-11,2025-02,,Retired
-k5-kpwm,sec,realuse5,gen5,2024-11,2025-02,,Active
+k5-kpwm,sec,realuse5,gen5,2024-11,2025-02,,Retired
 k5-kscript,cs,realuse5,gen5,2024-11,2025-02,,Retired
 k5-ksync,util,realuse5,gen5,2024-11,2025-02,,Retired
-k5-tlog,util,realuse5,gen5,2024-11,2025-02,,Active
+k5-tlog,util,realuse5,gen5,2024-11,2025-02,,Retired
 k5-ext,util,realuse5,gen5,2024-11,2025-02,,Retired
 
 k6-linecount,util,kutil6,gen6,2025-10,2025-11,2026-04,Retired
@@ -76,7 +77,7 @@ metrics,sec,usag,gen7,2026-05,2026-05,,Active
 yas-desktop,sec,usag,gen7,2026-02,2026-05,,Active
 yas-web,sec,usag,gen7,2026-04,,,In-Dev
 yas-web-lite,sec,usag,gen7,2026-02,2026-04,,Active
-yas-android,sec,usag,gen7,2026-05,,,In-Dev
+yas-android,sec,usag,gen7,2026-05,2026-06,,Active
 fc-desktop,sec,usag,gen7,2026-06,,,In-Dev
 fc-android,sec,usag,gen7,2026-06,,,In-Dev
 

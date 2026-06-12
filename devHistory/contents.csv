@@ -15,8 +15,8 @@ humphreys-map,Humphreys Map,D3vle0,https://github.com/k-atusa/humphreys-map,,
 lost-media-archive,IPFS Archive,D3vle0,https://github.com/k-atusa/lost-media-archive,,
 barracks-layout-simulator,Barracks Simulator,D3vle0,https://github.com/k-atusa/barracks-layout-simulator,TypeScript React Vite Three.js,육군 배럭 가구배치 시뮬레이터  Army barracks furniture layout simulator
 zkzzk ,Zkzzk Video Manager,D3vle0,https://github.com/k-atusa/zkzzk,Python JavaScript Flask SQLite FFmpeg Naver-API,치지직 방송 자동 녹화 및 VOD 관리 웹 서비스  A web service for automatic Chzzk live recording and VOD management 
-katusa-os-web,KATUSA OS web,D3vle0,https://github.com/k-atusa/landing,,
-fento-c,Femto-C,taewook427,https://github.com/k-atusa/femto-C,,
+katusa-landing,KATUSA Landing Page,D3vle0,https://github.com/k-atusa/landing,,
+logics,Online Logic Gate,D3vle0,https://github.com/k-atusa/logics,,
 
 c-practice,C test,taewook427,https://github.com/taewook427/CSAItest,C DataStructure,C로 자료구조 연습  Data structure parctice in C
 java-practice,Java test,taewook427,https://github.com/taewook427/CSAItest,Java,자바 기초 프로그래밍  Java basic programming
@@ -32,6 +32,7 @@ y-grade1,연세대 1학년 강의분석,taewook427,https://github.com/taewook427
 y-lteam2,연세의대 리더십팀프로젝트,taewook427,https://github.com/taewook427/lteam_test,JavaScript Python Selenium,연세의대생의 성적 확인서와 교과과정 PDF 데이터를 분석하여 진급 및 부전공 이수 요건 충족 여부를 자동으로 판정  Analyzes academic transcripts and curriculum data to automatically evaluate promotion and minor requirement status for Yonsei Medical students
 py-copycheck,Python Copy Check,taewook427,https://github.com/taewook427/WebMain,JavaScript LongestCommonSubsequence,변수명 연산구조 텍스트 동일성으로 두 파이썬 코드의 유사도 측정  Checks similarity between two Python codes using names control flow and text identity
 dev-history,Dev History,taewook427,https://github.com/taewook427/WebMain,JavaScript CSV,개별 프로젝트의 기술 도메인 세대 영향 관계를 시각화하는 인터랙티브 그래프  An interactive graph that visualizes the technical domains generations and dependencies of projects
+kzip-lite,Online Compressor,taewook427,https://github.com/taewook427/WebMain,JavaScript,다양한 포맷을 지원하는 온라인 압축과 해제 도구  Online compressing tool with various formats
 
 k1-kdm,KDM1,taewook427,https://github.com/taewook427/Kutil4,Python TkInter SHA2,초기형 파일 암호화 앱으로 알고리즘에 결함이 있었다  Early file encryption that has algorithm flaws
 k1-time,Windows Timer 1,taewook427,https://github.com/taewook427/Kutil4,Python TkInter,간단한 초단위 시계  A simple second clock
