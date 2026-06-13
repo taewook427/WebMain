@@ -108,7 +108,7 @@
 
 <body>
     <!-- title -->
-    <h1>YAS Web lite R5</h1>
+    <h1>YAS Web lite R6</h1>
     <div class="shared-state">
         <small id="key-status-bar">🔑 <strong>Key Status:</strong> Peer Pub: [❌] | My Pub: [❌] | My Pri: [❌]</small>
     </div>
@@ -183,7 +183,7 @@
                     <option value="rsa1">rsa1</option>
                     <option value="rsa2">rsa2</option>
                     <option value="ecc1">ecc1</option>
-                    <option value="pqc1">pqc1</option>
+                    <option value="pqc1" selected>pqc1</option>
                 </select>
                 <button onclick="handleSign()">Sign</button>
                 <button class="secondary" onclick="handleVerify()">Verify</button>
@@ -230,7 +230,7 @@
                 <select id="pw-opt-img">
                     <option value="none">No Image</option>
                     <option value="png">PNG</option>
-                    <option value="webp">WEBP</option>
+                    <option value="webp" selected>WEBP</option>
                 </select>
                 <select id="pw-opt-pack">
                     <option value="zip1">zip1</option>
@@ -238,12 +238,12 @@
                 </select>
                 <select id="pw-opt-sym">
                     <option value="gcm1">gcm1</option>
-                    <option value="gcmx1">gcmx1</option>
+                    <option value="gcmx1" selected>gcmx1</option>
                 </select>
                 <select id="pw-opt-hash">
-                    <option value="arg2">arg2</option>
-                    <option value="pbk2">pbk2</option>
                     <option value="sha3">sha3</option>
+                    <option value="pbk2">pbk2</option>
+                    <option value="arg2" selected>arg2</option>
                 </select>
                 <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
                     <input type="checkbox" id="pw-opt-pad" checked> Enable Padding
@@ -315,7 +315,7 @@
                 <select id="pk-opt-img">
                     <option value="none">No Image</option>
                     <option value="png">PNG</option>
-                    <option value="webp">WEBP</option>
+                    <option value="webp" selected>WEBP</option>
                 </select>
                 <select id="pk-opt-pack">
                     <option value="zip1">zip1</option>
@@ -323,13 +323,13 @@
                 </select>
                 <select id="pk-opt-sym">
                     <option value="gcm1">gcm1</option>
-                    <option value="gcmx1">gcmx1</option>
+                    <option value="gcmx1" selected>gcmx1</option>
                 </select>
                 <select id="pk-opt-asym">
                     <option value="rsa1">rsa1</option>
                     <option value="rsa2">rsa2</option>
                     <option value="ecc1">ecc1</option>
-                    <option value="pqc1">pqc1</option>
+                    <option value="pqc1" selected>pqc1</option>
                 </select>
                 <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
                     <input type="checkbox" id="pk-opt-sign"> Enable Sign/Verify
@@ -421,7 +421,7 @@
                     <option value="rsa1">rsa1</option>
                     <option value="rsa2">rsa2</option>
                     <option value="ecc1">ecc1</option>
-                    <option value="pqc1">pqc1</option>
+                    <option value="pqc1" selected>pqc1</option>
                 </select>
                 <button onclick="handleGenKey()">Generate Key</button>
             </div>
