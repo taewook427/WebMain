@@ -16,8 +16,10 @@ k5-websvr,k6-localhub
 k6-localhub,connhub
 
 connhub,mediahub
+usag-lib,mediahub
+mediahub,directhub
 connhub,dev-history
-yas-web-lite.kzip-lite
+yas-web-lite,kzip-lite
 
 r-practice,dshs
 y-bootcamp,dshs

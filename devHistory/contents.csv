@@ -83,6 +83,7 @@ fc-android,FalseCrypt android,taewook427,https://github.com/k-atusa/FalseCrypt-a
 
 connhub,Connection Hub,taewook427,https://github.com/k-atusa/ConnHub,Golang JavaScript Java NanoHTTPD,유니코드 지원과 사용자 편의성이 강화된 로컬 파일공유 서비스  Local file sharing service with enhanced Unicode support and user convenience
 mediahub,Media Hub,taewook427,https://github.com/k-atusa/MediaHub,Golang JavaScript USAG-Lib E2EE,서버 데이터 유출 없이 컨텐츠를 공유하는 웹 서비스  A web service that shares content without server data leakage
+directhub,Direct Hub,taewook427,https://github.com/k-atusa/DirectHub,Golang JavaScript,공유 온라인 파일시스템  Shared online filesystem
 
 k7-powerlog,PowerLog,taewook427,https://github.com/taewook427/ETS7,Golang,부팅 로그 기록  Records boot logs
 k7-testlog,TestLog,taewook427,https://github.com/taewook427/ETS7,Golang VersionControl,코드 일련번호 기록 관리  Code serial number record management

@@ -82,7 +82,8 @@ fc-desktop,sec,usag,gen7,2026-06,,,In-Dev
 fc-android,sec,usag,gen7,2026-06,,,In-Dev
 
 connhub,web,why,gen7,2026-02,2026-05,,Active
-mediahub,web,why,gen7,2026-07,,,In-Dev
+mediahub,web,why,gen7,2026-06,2026-06,,Active
+directhub,web,why,gen7,2026-07,2026-07,,Active
 
 k7-powerlog,util,ets7,gen7,2026-07,,,In-Dev
 k7-testlog,util,ets7,gen7,2026-07,,,In-Dev
