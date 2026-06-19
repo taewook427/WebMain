@@ -78,17 +78,17 @@ yas-desktop,sec,usag,gen7,2026-02,2026-05,,Active
 yas-web,sec,usag,gen7,2026-04,,,In-Dev
 yas-web-lite,sec,usag,gen7,2026-02,2026-04,,Active
 yas-android,sec,usag,gen7,2026-05,2026-06,,Active
-fc-desktop,sec,usag,gen7,2026-06,,,In-Dev
-fc-android,sec,usag,gen7,2026-06,,,In-Dev
+fc-server,web,usag,gen7,2026-06,2026-06,,Active
+fc-desktop,sec,usag,gen7,2026-07,2026-07,,Active
+fc-android,sec,usag,gen7,2026-07,2026-07,,Active
 
 connhub,web,why,gen7,2026-02,2026-05,,Active
 mediahub,web,why,gen7,2026-06,2026-06,,Active
-directhub,web,why,gen7,2026-07,2026-07,,Active
 
-k7-powerlog,util,ets7,gen7,2026-07,,,In-Dev
-k7-testlog,util,ets7,gen7,2026-07,,,In-Dev
-k7-thetime,util,ets7,gen7,2026-07,,,In-Dev
-k7-syncit,util,ets7,gen7,2026-07,,,In-Dev
-k7-picit,util,ets7,gen7,2026-07,,,In-Dev
-k7-imgconv,util,ets7,gen7,2026-07,,,In-Dev
-k7-fileconv,util,ets7,gen7,2026-07,,,In-Dev
+k7-powerlog,util,ets7,gen7,2026-07,2026-07,,Active
+k7-testlog,util,ets7,gen7,2026-07,2026-07,,Active
+k7-thetime,util,ets7,gen7,2026-07,2026-07,,Active
+k7-syncit,util,ets7,gen7,2026-07,2026-07,,Active
+k7-picit,util,ets7,gen7,2026-07,2026-07,,Active
+k7-imgconv,util,ets7,gen7,2026-07,2026-07,,Active
+k7-fileconv,util,ets7,gen7,2026-07,2026-07,,Active

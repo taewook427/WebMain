@@ -17,7 +17,6 @@ k6-localhub,connhub
 
 connhub,mediahub
 usag-lib,mediahub
-mediahub,directhub
 connhub,dev-history
 yas-web-lite,kzip-lite
 
@@ -76,6 +75,7 @@ usag-kox,k7-syncit
 usag-kox,aft
 usag-kox,yas-desktop
 usag-kox,yas-android
+usag-kox,fc-server
 usag-kox,fc-desktop
 usag-kox,fc-android
 
