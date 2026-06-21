@@ -9,7 +9,7 @@
     <title>YAS-web lite</title>
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-    
+
     <style>
         .tab-content {
             display: none;
@@ -108,7 +108,7 @@
 
 <body>
     <!-- title -->
-    <h1>YAS Web lite R6</h1>
+    <h1>YAS Web lite</h1>
     <div class="shared-state">
         <small id="key-status-bar">🔑 <strong>Key Status:</strong> Peer Pub: [❌] | My Pub: [❌] | My Pri: [❌]</small>
     </div>
@@ -180,8 +180,6 @@
             <h3>⚙️ Functions</h3>
             <div class="input-group">
                 <select id="sign-algo">
-                    <option value="rsa1">rsa1</option>
-                    <option value="rsa2">rsa2</option>
                     <option value="ecc1">ecc1</option>
                     <option value="pqc1" selected>pqc1</option>
                 </select>
@@ -242,8 +240,8 @@
                 </select>
                 <select id="pw-opt-hash">
                     <option value="sha3">sha3</option>
-                    <option value="pbk2">pbk2</option>
-                    <option value="arg2" selected>arg2</option>
+                    <option value="arg2low">arg2low</option>
+                    <option value="arg2st" selected>arg2st</option>
                 </select>
                 <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
                     <input type="checkbox" id="pw-opt-pad" checked> Enable Padding
@@ -326,8 +324,6 @@
                     <option value="gcmx1" selected>gcmx1</option>
                 </select>
                 <select id="pk-opt-asym">
-                    <option value="rsa1">rsa1</option>
-                    <option value="rsa2">rsa2</option>
                     <option value="ecc1">ecc1</option>
                     <option value="pqc1" selected>pqc1</option>
                 </select>
@@ -387,7 +383,8 @@
 
         <div class="module-section">
             <h3>🏠 My Public Key</h3>
-            <textarea id="key-my-pub" rows="3" placeholder="나의 공개키를 입력하거나 업로드하세요." oninput="updateKeyMetrics('my-pub')"></textarea>
+            <textarea id="key-my-pub" rows="3" placeholder="나의 공개키를 입력하거나 업로드하세요."
+                oninput="updateKeyMetrics('my-pub')"></textarea>
             <div class="key-info">
                 <small>Size: <span id="info-my-pub-size">0</span> bytes / CRC32: <span
                         id="info-my-pub-crc">-</span></small>
@@ -418,8 +415,6 @@
             <h3>🆕 Generate Key Pair</h3>
             <div class="input-group">
                 <select id="gen-algo">
-                    <option value="rsa1">rsa1</option>
-                    <option value="rsa2">rsa2</option>
                     <option value="ecc1">ecc1</option>
                     <option value="pqc1" selected>pqc1</option>
                 </select>
@@ -476,7 +471,7 @@
         // get image header
         async function getPrehead(encType, imgType) {
             if (imgType === 'none' || imgType === 'bin') return new Uint8Array(0);
-            const iconRes = await fetch(`https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Icons/data/${encType}_${imgType}.${imgType}`);
+            const iconRes = await fetch(`https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib@main/Icons/data/${encType}_${imgType}.${imgType}`);
             const iconBuf = new Uint8Array(await iconRes.arrayBuffer());
             const padLen = 128 - (iconBuf.length % 128);
             const prehead = new Uint8Array(iconBuf.length + padLen);
@@ -505,8 +500,8 @@
     <!-- zip tab -->
     <script type="module">
         // import module
-        import { ZipWriter, ZipReader } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Szip/Szip.js';
-        import { TarWriter, TarReader } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Star/Star.js';
+        import { ZipWriter, ZipReader } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib@main/Szip/Szip.js';
+        import { TarWriter, TarReader } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib@main/Star/Star.js';
 
         window.handleCompress = async function () {
             const fileInput = document.getElementById('zip-input-files');
@@ -616,8 +611,8 @@
     <!-- sign tab -->
     <script type="module">
         // import module
-        import { AsymMaster, Masker } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Bencrypt/Bencrypt.js';
-        import { Encode64, Decode64 } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Bencode/Bencode.js';
+        import { AsymMaster, Masker } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib@main/Bencrypt/Bencrypt.js';
+        import { Encode64, Decode64 } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib@main/Bencode/Bencode.js';
         const sgnMask = new Masker();
 
         // sign with my private
@@ -692,11 +687,11 @@
     <!-- password tab -->
     <script type="module">
         // import module
-        import { Opsec, Crc32, PadLen, PadFile } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Opsec/Opsec.js';
-        import { SymMaster, HashMaster, TestReader, TestWriter, Masker } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Bencrypt/Bencrypt.js';
-        import { Encode64, Decode64, NormPW } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Bencode/Bencode.js';
-        import { ZipWriter, ZipReader } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Szip/Szip.js';
-        import { TarWriter, TarReader } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Star/Star.js';
+        import { Opsec, Crc32, PadLen, PadFile } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib@main/Opsec/Opsec.js';
+        import { SymMaster, HashMaster, TestReader, TestWriter, Masker } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib@main/Bencrypt/Bencrypt.js';
+        import { Encode64, Decode64, NormPW } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib@main/Bencode/Bencode.js';
+        import { ZipWriter, ZipReader } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib@main/Szip/Szip.js';
+        import { TarWriter, TarReader } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib@main/Star/Star.js';
         const pwMask = new Masker();
         window.currentPwKeyBuffer = new Uint8Array(0);
 
@@ -762,7 +757,7 @@
                     }
 
                     // set body size and algo
-                    const dummySm = new SymMaster(symAlgo, new Uint8Array(44));
+                    const dummySm = new SymMaster(symAlgo, new Uint8Array(32));
                     op.BodySize = dummySm.AfterSize(packedBuffer.length);
                     op.BodyAlgo = symAlgo;
 
@@ -916,11 +911,11 @@
     <!-- public key tab -->
     <script type="module">
         // import module
-        import { Opsec, PadLen, PadFile } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Opsec/Opsec.js';
-        import { SymMaster, TestReader, TestWriter, Masker } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Bencrypt/Bencrypt.js';
-        import { Encode64, Decode64 } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Bencode/Bencode.js';
-        import { ZipWriter, ZipReader } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Szip/Szip.js';
-        import { TarWriter, TarReader } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Star/Star.js';
+        import { Opsec, PadLen, PadFile } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib@main/Opsec/Opsec.js';
+        import { SymMaster, TestReader, TestWriter, Masker } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib@main/Bencrypt/Bencrypt.js';
+        import { Encode64, Decode64 } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib@main/Bencode/Bencode.js';
+        import { ZipWriter, ZipReader } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib@main/Szip/Szip.js';
+        import { TarWriter, TarReader } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib@main/Star/Star.js';
         const pkMask = new Masker();
 
         // clear file selection utility
@@ -977,7 +972,7 @@
                     }
 
                     // set body size and algo
-                    const dummySm = new SymMaster(symAlgo, new Uint8Array(44));
+                    const dummySm = new SymMaster(symAlgo, new Uint8Array(32));
                     op.BodySize = dummySm.AfterSize(packedBuffer.length);
                     op.BodyAlgo = symAlgo;
 
@@ -1153,9 +1148,9 @@
     <!-- key settings tab -->
     <script type="module">
         // import modules
-        import { AsymMaster, Masker } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Bencrypt/Bencrypt.js';
-        import { Crc32 } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Opsec/Opsec.js';
-        import { Encode64, Decode64 } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib/Bencode/Bencode.js';
+        import { AsymMaster, Masker } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib@main/Bencrypt/Bencrypt.js';
+        import { Crc32 } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib@main/Opsec/Opsec.js';
+        import { Encode64, Decode64 } from 'https://cdn.jsdelivr.net/gh/k-atusa/USAG-Lib@main/Bencode/Bencode.js';
         const keyIDs = ['peer-pub', 'my-pub', 'my-pri'];
         const keyMask = new Masker();
 
@@ -1229,7 +1224,7 @@
 
         // download key
         window.downloadKey = function (id) {
-            const key = id == 'my-pri' ? keyMask.XOR(window.keyCache[id]): window.keyCache[id];
+            const key = id == 'my-pri' ? keyMask.XOR(window.keyCache[id]) : window.keyCache[id];
             if (!key) return alert("No key data to save.");
             const blob = new Blob([Encode64(key, "#")], { type: 'text/plain' });
             if (id === 'my-pri') zeroize(key);
@@ -1247,7 +1242,7 @@
                     zeroize(bin);
                     return res;
                 } else {
-                    return Crc32(window.keyCache[id]).toUpperCase(); 
+                    return Crc32(window.keyCache[id]).toUpperCase();
                 }
             };
             stateEl.innerHTML = `🔑 <strong>Key Status:</strong> Peer Pub: [${getLabel('peer-pub')}] | My Pub: [${getLabel('my-pub')}] | My Pri: [${getLabel('my-pri')}]`;
