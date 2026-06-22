@@ -33,6 +33,7 @@ y-lteam2,연세의대 리더십팀프로젝트,taewook427,https://github.com/tae
 py-copycheck,Python Copy Check,taewook427,https://github.com/taewook427/WebMain,JavaScript LongestCommonSubsequence,변수명 연산구조 텍스트 동일성으로 두 파이썬 코드의 유사도 측정  Checks similarity between two Python codes using names control flow and text identity
 dev-history,Dev History,taewook427,https://github.com/taewook427/WebMain,JavaScript CSV,개별 프로젝트의 기술 도메인 세대 영향 관계를 시각화하는 인터랙티브 그래프  An interactive graph that visualizes the technical domains generations and dependencies of projects
 kzip-lite,Online Compressor,taewook427,https://github.com/taewook427/WebMain,JavaScript,다양한 포맷을 지원하는 온라인 압축과 해제 도구  Online compressing tool with various formats
+webclock,온라인 시계,taewook427,https://github.com/taewook427/WebMain,JavaScript,온라인 초단위시계 타이머 스탑워치  Online clock timer stopwatch
 
 k1-kdm,KDM1,taewook427,https://github.com/taewook427/Kutil4,Python TkInter SHA2,초기형 파일 암호화 앱으로 알고리즘에 결함이 있었다  Early file encryption that has algorithm flaws
 k1-time,Windows Timer 1,taewook427,https://github.com/taewook427/Kutil4,Python TkInter,간단한 초단위 시계  A simple second clock
@@ -78,16 +79,14 @@ yas-desktop,YAS-desktop,taewook427,https://github.com/k-atusa/YAS-desktop,Golang
 yas-web,YAS-web,taewook427,https://github.com/k-atusa/YAS-web,JavaScript TypeScript Tor USAG-Lib,YAS 기능을 웹으로 구현하고 안전하게 공유하는 서비스  A service that implements YAS functions on the web and shares securely
 yas-web-lite,YAS-web lite,taewook427,https://github.com/taewook427/WebMain,JavaScript USAG-Lib,YAS 핵심 기능을 지원하는 가벼운 정적 웹  A lite static web supports core functions of YAS
 yas-android,YAS-android,taewook427,https://github.com/k-atusa/YAS-android,Java Android USAG-Lib TCP,YAS 안드로이드 버전  YAS Android version
-fc-server,FalseCrypt server,taewook427,https://github.com/k-atusa/FalseCrypt-server/tree/main,Golang JavaScript,데이터 저장 서버 및 커뮤니티 블로그  Data storing server and community blog
+fc-server,FalseCrypt server,taewook427,https://github.com/k-atusa/FalseCrypt-server,Golang JavaScript,데이터 저장 서버 및 커뮤니티 블로그  Data storing server and community blog
 fc-desktop,FalseCrypt desktop,taewook427,https://github.com/k-atusa/FalseCrypt-desktop,Golang Fyne2 USAG-Lib E2EE,암호화 로직 담당 데스크톱 앱  Desktop app responsible for encryption logic
 fc-android,FalseCrypt android,taewook427,https://github.com/k-atusa/FalseCrypt-android,Java Android USAG-Lib E2EE,FalseCrypt 핵심 기능이 지원되는 안드로이드 클라이언트  Android client supporting FalseCrypt core features
 
 connhub,Connection Hub,taewook427,https://github.com/k-atusa/ConnHub,Golang JavaScript Java NanoHTTPD,유니코드 지원과 사용자 편의성이 강화된 로컬 파일공유 서비스  Local file sharing service with enhanced Unicode support and user convenience
 mediahub,Media Hub,taewook427,https://github.com/k-atusa/MediaHub,Golang JavaScript USAG-Lib E2EE,서버 데이터 유출 없이 컨텐츠를 공유하는 웹 서비스  A web service that shares content without server data leakage
 
-k7-powerlog,PowerLog,taewook427,https://github.com/taewook427/ETS7,Golang,부팅 로그 기록  Records boot logs
 k7-testlog,TestLog,taewook427,https://github.com/taewook427/ETS7,Golang VersionControl,코드 일련번호 기록 관리  Code serial number record management
-k7-thetime,The Time,taewook427,https://github.com/taewook427/ETS7,Golang Fyne2,다목적 초단위 시계  Multi-purpose second clock
 k7-syncit,Sync It,taewook427,https://github.com/taewook427/ETS7,Golang USAG-Lib TCP,LAN 네트워크로 안전하게 폴더 동기화  Securely synchronize folders over a LAN network
 k7-picit,Picture It,taewook427,https://github.com/taewook427/ETS7,Golang Fyne2,데이터 이미지 픽셀 임베딩  Embed data inside image pixels
 k7-imgconv,Image Convert,taewook427,https://github.com/taewook427/ETS7,Golang Fyne2,이미지 편집 병합 형식 등 에디터  Editor for image editing merging and formats

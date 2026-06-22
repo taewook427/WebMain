@@ -33,6 +33,7 @@ y-lteam2,web,,,2023-04,2023-11,2024-01,Retired
 py-copycheck,util,,,2023-10,2023-10,2026-05,Retired
 dev-history,web,,,2026-04,2026-05,,Active
 kzip-lite,web,,,2026-06,2026-06,,Active
+webclock,web,,,2026-06,2026-06,,Active
 
 k1-kdm,sec,kutil1,gen1,2021-05,2021-06,2021-10,Retired
 k1-time,util,kutil1,gen1,2021-05,2021-06,2021-10,Retired
@@ -85,9 +86,7 @@ fc-android,sec,usag,gen7,2026-07,2026-07,,Active
 connhub,web,why,gen7,2026-02,2026-05,,Active
 mediahub,web,why,gen7,2026-06,2026-06,,Active
 
-k7-powerlog,util,ets7,gen7,2026-07,2026-07,,Active
 k7-testlog,util,ets7,gen7,2026-07,2026-07,,Active
-k7-thetime,util,ets7,gen7,2026-07,2026-07,,Active
 k7-syncit,util,ets7,gen7,2026-07,2026-07,,Active
 k7-picit,util,ets7,gen7,2026-07,2026-07,,Active
 k7-imgconv,util,ets7,gen7,2026-07,2026-07,,Active

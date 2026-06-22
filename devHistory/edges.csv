@@ -38,9 +38,8 @@ k5-kmacro,usag-lib
 k5-kmap,usag-lib
 k5-convs,k7-imgconv
 k5-convs,k7-fileconv
-k5-clock,k7-thetime
+k5-clock,webclock
 k5-manager,uasg-lib
-k5-manager,k7-powerlog
 
 k1-kdm,k2-kdm
 k2-kdm,k3-lib
