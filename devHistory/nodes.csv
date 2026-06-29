@@ -16,7 +16,7 @@ lost-media-archive,web,,,2026-02,,,In-Dev
 barracks-layout-simulator,web,hump,,2026-01,2026-02,,Active
 zkzzk,web,,,2025-08,2025-09,,Active
 katusa-landing,web,,,2026-04,2026-06,,Active
-logics,cs,,2026-06,2026-06,,Active
+logics,cs,,,2026-06,2026-06,,Active
 
 c-practice,cs,,,2023-05,2023-06,2023-06,Retired
 java-practice,cs,,,2023-05,2023-06,2023-06,Retired
@@ -84,10 +84,12 @@ fc-desktop,sec,usag,gen7,2026-07,2026-07,,Active
 fc-android,sec,usag,gen7,2026-07,2026-07,,Active
 
 connhub,web,why,gen7,2026-02,2026-05,,Active
-mediahub,web,why,gen7,2026-06,2026-06,,Active
+mediahub,web,why,gen7,2026-06,2026-07,,Active
 
-k7-testlog,util,ets7,gen7,2026-07,2026-07,,Active
-k7-syncit,util,ets7,gen7,2026-07,2026-07,,Active
-k7-picit,util,ets7,gen7,2026-07,2026-07,,Active
-k7-imgconv,util,ets7,gen7,2026-07,2026-07,,Active
-k7-fileconv,util,ets7,gen7,2026-07,2026-07,,Active
+k7-testlog,util,ets7,gen7,2026-06,2026-06,,Active
+k7-syncit,util,ets7,gen7,2026-06,2026-06,,Active
+k7-repairit,util,ets7,gen7,2026-07,2026-07,,Active
+k7-picit,util,ets7,gen7,2026-06,2026-06,,Active
+k7-imgconv,util,ets7,gen7,2026-06,2026-06,,Active
+k7-fileconv,util,ets7,gen7,2026-06,2026-06,,Active
+k7-tzconv,util,ets7,gen7,2026-07,2026-07,,Active

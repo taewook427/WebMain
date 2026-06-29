@@ -69,6 +69,9 @@ k5-kv,mediahub
 k6-unitconv,metrics
 k6-linecount,usag-lib
 
+kzip-lite,k7-tzconv
+k7-syncit,k7-repairit
+
 usag-lib,usag-kox
 usag-kox,k7-syncit
 usag-kox,aft
