@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,10 @@
 
   <link rel="icon" type="image/png" href="./favicon.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
-  
+
   <style>
     @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-    
+
     :root {
       --pico-font-family: 'Pretendard', sans-serif;
       --pico-typography-spacing: 1.5rem;
@@ -25,22 +26,25 @@
     .portal-nav {
       margin-bottom: 3rem;
     }
-    
+
     .portal-grid {
       display: grid;
       gap: 0.75rem;
-      grid-template-columns: repeat(2, 1fr); /* portal grid default 2 */
+      grid-template-columns: repeat(2, 1fr);
+      /* portal grid default 2 */
     }
 
     @media (min-width: 768px) {
       .portal-grid {
-        grid-template-columns: repeat(4, 1fr); /* portal grid tablet 4 */
+        grid-template-columns: repeat(4, 1fr);
+        /* portal grid tablet 4 */
       }
     }
 
     @media (min-width: 1200px) {
       .portal-grid {
-        grid-template-columns: repeat(8, 1fr); /* portal grid desktop 8 */
+        grid-template-columns: repeat(8, 1fr);
+        /* portal grid desktop 8 */
       }
     }
 
@@ -50,16 +54,17 @@
       font-size: 0.85rem;
       font-weight: 600;
       text-decoration: none;
-      color: white; 
+      color: white;
       border: none;
       transition: filter 0.2s;
-      
+
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       display: block;
       width: 100%;
     }
+
     .portal-grid a:hover {
       filter: brightness(1.2);
     }
@@ -77,35 +82,61 @@
     }
 
     /* D-Day Styles */
-    .dday-item { margin-bottom: 1.5rem; }
+    .dday-item {
+      margin-bottom: 1.5rem;
+    }
+
     .dday-info {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
       margin-bottom: 0.3rem;
     }
-    .dday-title { font-weight: 600; font-size: 0.95rem; }
+
+    .dday-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
     .dday-percent {
       color: var(--pico-primary);
       font-weight: bold;
       font-size: 0.85rem;
-      font-variant-numeric: tabular-nums; 
+      font-variant-numeric: tabular-nums;
     }
-    
-    progress.completed::-webkit-progress-value { background-color: #2e7d32; }
-    progress.completed::-moz-progress-bar { background-color: #2e7d32; }
-    progress.waiting::-webkit-progress-value { background-color: #424242; }
-    progress.waiting::-moz-progress-bar { background-color: #424242; }
 
-    progress { margin-bottom: 0.2rem; }
+    progress.completed::-webkit-progress-value {
+      background-color: #2e7d32;
+    }
+
+    progress.completed::-moz-progress-bar {
+      background-color: #2e7d32;
+    }
+
+    progress.waiting::-webkit-progress-value {
+      background-color: #424242;
+    }
+
+    progress.waiting::-moz-progress-bar {
+      background-color: #424242;
+    }
+
+    progress {
+      margin-bottom: 0.2rem;
+    }
+
     .dday-dates {
       font-size: 0.7rem;
       color: var(--pico-muted-color);
       display: flex;
       justify-content: space-between;
     }
-    .tz-badge { font-weight: bold; opacity: 0.7; }
-    
+
+    .tz-badge {
+      font-weight: bold;
+      opacity: 0.7;
+    }
+
     .vercel-img {
       width: 100%;
       border-radius: var(--pico-border-radius);
@@ -113,9 +144,10 @@
     }
   </style>
 </head>
+
 <body>
   <main class="container">
-    
+
     <section class="portal-nav">
       <h2>Portals</h2>
       <div class="portal-grid" id="portal-list"></div>
@@ -124,10 +156,12 @@
     <section>
       <h2>Dashboard</h2>
       <div class="blocks-container">
-        
+
         <article>
           <header><strong>GitHub Languages</strong></header>
-          <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=taewook427&layout=compact&hide_border=true&bg_color=00000000&langs_count=10&theme=dark" alt="GitHub Languages" class="vercel-img">
+          <img
+            src="https://github-readme-stats.vercel.app/api/top-langs/?username=taewook427&layout=compact&hide_border=true&bg_color=00000000&langs_count=10&theme=dark"
+            alt="GitHub Languages" class="vercel-img">
         </article>
 
         <article>
@@ -155,7 +189,7 @@
         { name: 'KZip-lite', url: './kzip-lite/index.html', color: '#FF94A3' },
 
         { name: 'Zkzzk', url: 'https://zkzzk.katusa.space/', color: '#059669' },
-        { name: 'KATUSA AI', url: 'https://ai.katusa.space/', color: '#0284C7' },
+        { name: 'Goodbye AI', url: './goodbye-ai-block/index.html', color: '#0284C7' },
         { name: 'ASMR', url: 'https://asmr.katusa.space/', color: '#0D9488' },
         { name: 'Barracks Design', url: 'https://barracks-layout-simulator.vercel.app', color: '#E11D48' },
       ],
@@ -238,7 +272,7 @@
         // calculate progress
         const elapsed = now - item.start;
         let percent = (elapsed / item.total) * 100;
-        
+
         // calculate remaining days
         const endDate = new Date(item.end);
         endDate.setHours(0, 0, 0, 0);
@@ -263,7 +297,7 @@
             statusText = `D-${remainingDays} (${percent.toFixed(7)}%)`;
           }
         }
-        
+
         if (item.percentElement.textContent !== statusText) {
           item.percentElement.textContent = statusText;
           item.progressElement.value = percent;
@@ -276,4 +310,5 @@
     setTimeout(initProgressDDays, 0.1);
   </script>
 </body>
+
 </html>
