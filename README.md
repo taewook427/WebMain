@@ -8,3 +8,4 @@ Main website with portal links, vercel images and D-Day trackers
 - YAS-web-lite: k-atusa/YAS의 경량화 웹 버전 Lightweight web version of k-atusa/YAS
 - kzip-lite: 온라인 압축과 해제 도구 Online compressing and decompressing tool
 - webClock: 초단위 시계, 타이머, 스톱워치 Second clock, Timer, Stopwatch
+- goodbye-ai-block: AI 무단 크롤링과 자동 검열 우회  Bypassing unauthorized AI crawling and automatic censorship
