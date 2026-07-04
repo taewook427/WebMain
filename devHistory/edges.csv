@@ -63,7 +63,6 @@ k5-ext,usag-lib
 k5-lib,usag-lib
 k5-kv,fc-server
 k5-kv,fc-desktop
-k5-kv,fc-android
 k5-kv,mediahub
 
 k6-unitconv,metrics
@@ -79,7 +78,6 @@ usag-kox,yas-desktop
 usag-kox,yas-android
 usag-kox,fc-server
 usag-kox,fc-desktop
-usag-kox,fc-android
 
 uasg-lib,k7-syncit
 uasg-lib,k7-picit
@@ -90,6 +88,4 @@ usag-lib,yas-android
 usag-lib,yas-web
 usag-lib,yas-web-lite
 usag-lib,fc-desktop
-usag-lib,fc-android
 yas-desktop,fc-desktop
-yas-android,fc-android

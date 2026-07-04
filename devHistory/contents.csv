@@ -82,7 +82,6 @@ yas-web-lite,YAS-web lite,taewook427,https://github.com/taewook427/WebMain,JavaS
 yas-android,YAS-android,taewook427,https://github.com/k-atusa/YAS-android,Java Android USAG-Lib TCP,YAS 안드로이드 버전  YAS Android version
 fc-server,FalseCrypt server,taewook427,https://github.com/k-atusa/FalseCrypt-server,Golang JavaScript,데이터 저장 서버 및 커뮤니티 블로그  Data storing server and community blog
 fc-desktop,FalseCrypt desktop,taewook427,https://github.com/k-atusa/FalseCrypt-desktop,Golang Fyne2 USAG-Lib E2EE,암호화 로직 담당 데스크톱 앱  Desktop app responsible for encryption logic
-fc-android,FalseCrypt android,taewook427,https://github.com/k-atusa/FalseCrypt-android,Java Android USAG-Lib E2EE,FalseCrypt 핵심 기능이 지원되는 안드로이드 클라이언트  Android client supporting FalseCrypt core features
 
 connhub,Connection Hub,taewook427,https://github.com/k-atusa/ConnHub,Golang JavaScript Java NanoHTTPD,유니코드 지원과 사용자 편의성이 강화된 로컬 파일공유 서비스  Local file sharing service with enhanced Unicode support and user convenience
 mediahub,Media Hub,taewook427,https://github.com/k-atusa/MediaHub,Golang JavaScript USAG-Lib E2EE,서버 데이터 유출 없이 컨텐츠를 공유하는 웹 서비스  A web service that shares content without server data leakage
