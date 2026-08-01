@@ -17,7 +17,7 @@ barracks-layout-simulator,Barracks Simulator,D3vle0,https://github.com/k-atusa/b
 zkzzk ,Zkzzk Video Manager,D3vle0,https://github.com/k-atusa/zkzzk,Python JavaScript Flask SQLite FFmpeg Naver-API,치지직 방송 자동 녹화 및 VOD 관리 웹 서비스  A web service for automatic Chzzk live recording and VOD management 
 katusa-landing,KATUSA Landing Page,D3vle0,https://github.com/k-atusa/landing,,
 logics,Online Logic Gate,D3vle0,https://github.com/k-atusa/logics,,
-gb-ai-block,Goodbye AI Block,taewook427,https://github.com/k-atusa/goodbye-ai-block,,
+gb-ai-block,Goodbye AI Block,taewook427,https://github.com/k-atusa/goodbye-ai-block,JavaScript Obscuration,자동화 검열과 무단 스크래핑 방지용 난독화 도구  Prevents automated censorship and scraping
 
 c-practice,C test,taewook427,https://github.com/taewook427/CSAItest,C DataStructure,C로 자료구조 연습  Data structure parctice in C
 java-practice,Java test,taewook427,https://github.com/taewook427/CSAItest,Java,자바 기초 프로그래밍  Java basic programming
@@ -82,9 +82,10 @@ yas-web-lite,YAS-web lite,taewook427,https://github.com/taewook427/WebMain,JavaS
 yas-android,YAS-android,taewook427,https://github.com/k-atusa/YAS-android,Java Android USAG-Lib TCP,YAS 안드로이드 버전  YAS Android version
 fc-server,FalseCrypt server,taewook427,https://github.com/k-atusa/FalseCrypt-server,Golang JavaScript,데이터 저장 서버 및 커뮤니티 블로그  Data storing server and community blog
 fc-desktop,FalseCrypt desktop,taewook427,https://github.com/k-atusa/FalseCrypt-desktop,Golang Fyne2 USAG-Lib E2EE,암호화 로직 담당 데스크톱 앱  Desktop app responsible for encryption logic
+fc-android,FalseCrypt android,taewook427,https://github.com/k-atusa/FalseCrypt-android,Java Android USAG-Lib E2EE,모바일에서 간편하게 데이터에 접속하기 위한 앱  App for accessing data with mobile device
 
 connhub,Connection Hub,taewook427,https://github.com/k-atusa/ConnHub,Golang JavaScript Java NanoHTTPD,유니코드 지원과 사용자 편의성이 강화된 로컬 파일공유 서비스  Local file sharing service with enhanced Unicode support and user convenience
-mediahub,Media Hub,taewook427,https://github.com/k-atusa/MediaHub,Golang JavaScript USAG-Lib E2EE,서버 데이터 유출 없이 컨텐츠를 공유하는 웹 서비스  A web service that shares content without server data leakage
+mediahub,Media Hub,taewook427,https://github.com/k-atusa/MediaHub,Golang JavaScript Java USAG-Lib E2EE,서버 데이터 유출 없이 컨텐츠를 공유하는 웹 서비스  A web service that shares content without server data leakage
 
 k7-testlog,TestLog,taewook427,https://github.com/taewook427/ETS7,Golang VersionControl,코드 일련번호 기록 관리  Code serial number record management
 k7-syncit,Sync It,taewook427,https://github.com/taewook427/ETS7,Golang CRC32,수정시각과 CRC 기반 폴더 동기화  Synchronize folders by modtime and CRC

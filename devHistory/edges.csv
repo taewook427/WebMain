@@ -88,4 +88,6 @@ usag-lib,yas-android
 usag-lib,yas-web
 usag-lib,yas-web-lite
 usag-lib,fc-desktop
+usag-lib,fc-android
 yas-desktop,fc-desktop
+yas-android,fc-android
