@@ -91,3 +91,4 @@ usag-lib,fc-desktop
 usag-lib,fc-android
 yas-desktop,fc-desktop
 yas-android,fc-android
+fc-server,nova

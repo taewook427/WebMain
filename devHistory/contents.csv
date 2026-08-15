@@ -16,8 +16,10 @@ lost-media-archive,IPFS Archive,D3vle0,https://github.com/k-atusa/lost-media-arc
 barracks-layout-simulator,Barracks Simulator,D3vle0,https://github.com/k-atusa/barracks-layout-simulator,TypeScript React Vite Three.js,육군 배럭 가구배치 시뮬레이터  Army barracks furniture layout simulator
 zkzzk ,Zkzzk Video Manager,D3vle0,https://github.com/k-atusa/zkzzk,Python JavaScript Flask SQLite FFmpeg Naver-API,치지직 방송 자동 녹화 및 VOD 관리 웹 서비스  A web service for automatic Chzzk live recording and VOD management 
 katusa-landing,KATUSA Landing Page,D3vle0,https://github.com/k-atusa/landing,,
-logics,Online Logic Gate,D3vle0,https://github.com/k-atusa/logics,,
+logics,Online Logic Gate,D3vle0,https://github.com/k-atusa/logics,LogicGate TypeScript React,온라인 논리회로 시뮬레이션과 그래프  Online logic gates simulation and graph
 gb-ai-block,Goodbye AI Block,taewook427,https://github.com/k-atusa/goodbye-ai-block,JavaScript Obscuration,자동화 검열과 무단 스크래핑 방지용 난독화 도구  Prevents automated censorship and scraping
+nova,NoVA Agents,D3vle0,https://github.com/k-atusa/NoVA,AI Golang TypeScript,LLM api로 구동되는 FC인사이드를 위한 커뮤니티 활동 봇  LLM-powered community bot for FCinside
+ebookificate,eBookificate,taewook427,https://github.com/k-atusa/eBookificate,Python Java Android Camera ImageProcess,종이책과 문서를 스캔하고 이미지 처리하여 전자책으로 변환  Scan paper docs and books and convert to ebook by image processing
 
 c-practice,C test,taewook427,https://github.com/taewook427/CSAItest,C DataStructure,C로 자료구조 연습  Data structure parctice in C
 java-practice,Java test,taewook427,https://github.com/taewook427/CSAItest,Java,자바 기초 프로그래밍  Java basic programming
