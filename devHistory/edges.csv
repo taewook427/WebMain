@@ -15,11 +15,6 @@ y-lteam2,k5-websvr
 k5-websvr,k6-localhub
 k6-localhub,connhub
 
-connhub,mediahub
-usag-lib,mediahub
-connhub,dev-history
-yas-web-lite,kzip-lite
-
 r-practice,dshs
 y-bootcamp,dshs
 y-student,dshs
@@ -31,15 +26,6 @@ k1-time,k2-time
 k2-time,k3-time
 k3-time,k5-lib
 k3-time,k5-clock
-
-k5-tlog,k7-testlog
-k5-ksync,k7-syncit
-k5-kmacro,usag-lib
-k5-kmap,usag-lib
-k5-convs,k7-imgconv
-k5-convs,k7-fileconv
-k5-clock,webclock
-k5-manager,uasg-lib
 
 k1-kdm,k2-kdm
 k2-kdm,k3-lib
@@ -63,13 +49,19 @@ k5-ext,usag-lib
 k5-lib,usag-lib
 k5-kv,fc-server
 k5-kv,fc-desktop
-k5-kv,mediahub
+k5-kv,mh-server
+
+k5-tlog,k7-testlog
+k5-ksync,k7-syncit
+k5-kmacro,usag-lib
+k5-kmap,usag-lib
+k5-convs,k7-imgconv
+k5-convs,k7-fileconv
+k5-clock,webclock
+k5-manager,uasg-lib
 
 k6-unitconv,metrics
 k6-linecount,usag-lib
-
-kzip-lite,k7-tzconv
-k7-syncit,k7-repairit
 
 usag-lib,usag-kox
 usag-kox,k7-syncit
@@ -81,7 +73,9 @@ usag-kox,fc-desktop
 
 uasg-lib,k7-syncit
 uasg-lib,k7-picit
-usag-lib,mediahub
+usag-lib,mh-server
+usag-lib,mh-desktop
+usag-lib,mh-android
 usag-lib,aft
 usag-lib,yas-desktop
 usag-lib,yas-android
@@ -89,6 +83,16 @@ usag-lib,yas-web
 usag-lib,yas-web-lite
 usag-lib,fc-desktop
 usag-lib,fc-android
+
 yas-desktop,fc-desktop
 yas-android,fc-android
+yas-web-lite,kzip-lite
 fc-server,nova
+
+connhub,mh-server
+connhub,dev-history
+mh-server,mh-desktop
+mh-server,mh-android
+
+kzip-lite,k7-tzconv
+k7-syncit,k7-repairit

@@ -31,14 +31,16 @@ bkscript2,BKscript2,taewook427,https://github.com/taewook427/CSAItest,C++ BK Com
 y-bootcamp,2024 연세의대 부트캠프,taewook427,https://github.com/taewook427/CSAItest,Python NumPy Pandas Scikit Keras CNN MedicalAI,의료 데이터 활용하여 데이터 전처리 PCA 의사결정트리 CNN 모델 실습  Practice data preprocessing PCA Decision Trees and CNN using medical datasets
 y-student,2024 연세 학생스터디,taewook427,https://github.com/taewook427/CSAItest,Python NumPy,퍼셉트론 역전파 MNIST 손글씨 인식을 바닥부터 구현  Build perceptrons activation functions and backpropagation from scratch
 dshs,동성고등학교 강의용,taewook427,https://github.com/taewook427/CSAItest,Python Keras LSTM,학생 강의용 언어모델과 심장마비 예측 모델  Text model and heart failure model for highschool lecture
+korizen,KorizenBench,taewook427,https://github.com/taewook427/CSAItest,AI BenchMark Reasoning Puzzle,암호퍼즐 기반 시각 장기추론 벤치마크  Optic long-term reasoning bench based on crypto puzzle
+ml1,처음 배우는 머신러닝,taewook427,https://github.com/taewook427/CSAItest,AI ML Python,도서 실습 인공지능 기계학습 코드  Book Practice AI ML Code
+
 y-grade1,연세대 1학년 강의분석,taewook427,https://github.com/taewook427/WebMain,JavaScript,에브리타임 담은수와 강의실 정원을 비교하여 수강신청 경쟁률 계산  Predicts course registration competition by comparing application numbers with room capacities
 y-lteam2,연세의대 리더십팀프로젝트,taewook427,https://github.com/taewook427/lteam_test,JavaScript Python Selenium,연세의대생의 성적 확인서와 교과과정 PDF 데이터를 분석하여 진급 및 부전공 이수 요건 충족 여부를 자동으로 판정  Analyzes academic transcripts and curriculum data to automatically evaluate promotion and minor requirement status for Yonsei Medical students
 py-copycheck,Python Copy Check,taewook427,https://github.com/taewook427/WebMain,JavaScript LongestCommonSubsequence,변수명 연산구조 텍스트 동일성으로 두 파이썬 코드의 유사도 측정  Checks similarity between two Python codes using names control flow and text identity
 dev-history,Dev History,taewook427,https://github.com/taewook427/WebMain,JavaScript CSV,개별 프로젝트의 기술 도메인 세대 영향 관계를 시각화하는 인터랙티브 그래프  An interactive graph that visualizes the technical domains generations and dependencies of projects
 kzip-lite,Online Compressor,taewook427,https://github.com/taewook427/WebMain,JavaScript,다양한 포맷을 지원하는 온라인 압축과 해제 도구  Online compressing tool with various formats
-webclock,온라인 시계,taewook427,https://github.com/taewook427/WebMain,JavaScript,온라인 초단위시계 타이머 스탑워치  Online clock timer stopwatch
-korizen,KorizenBench,taewook427,https://github.com/taewook427/CSAItest,AI BenchMark Reasoning Puzzle,암호퍼즐 기반 시각 장기추론 벤치마크  Optic long-term reasoning bench based on crypto puzzle
-ml1,처음 배우는 머신러닝,taewook427,https://github.com/taewook427/CSAItest,AI ML Python,도서 실습 인공지능 기계학습 코드  Book Practice AI ML Code
+webclock,Web Clock,taewook427,https://github.com/taewook427/WebMain,JavaScript,온라인 초단위시계 타이머 스탑워치  Online clock timer stopwatch
+webhex,Web Hexview,taewook427,https://github.com/taewook427/WebMain,JavaScript,온라인 헥스 뷰어  Online hex data viewer
 
 k1-kdm,KDM1,taewook427,https://github.com/taewook427/Kutil4,Python TkInter SHA2,초기형 파일 암호화 앱으로 알고리즘에 결함이 있었다  Early file encryption that has algorithm flaws
 k1-time,Windows Timer 1,taewook427,https://github.com/taewook427/Kutil4,Python TkInter,간단한 초단위 시계  A simple second clock
@@ -89,7 +91,9 @@ fc-desktop,FalseCrypt desktop,taewook427,https://github.com/k-atusa/FalseCrypt-d
 fc-android,FalseCrypt android,taewook427,https://github.com/k-atusa/FalseCrypt-android,Java Android USAG-Lib E2EE,모바일에서 간편하게 데이터에 접속하기 위한 앱  App for accessing data with mobile device
 
 connhub,Connection Hub,taewook427,https://github.com/k-atusa/ConnHub,Golang JavaScript Java NanoHTTPD,유니코드 지원과 사용자 편의성이 강화된 로컬 파일공유 서비스  Local file sharing service with enhanced Unicode support and user convenience
-mediahub,Media Hub,taewook427,https://github.com/k-atusa/MediaHub,Golang JavaScript Java USAG-Lib E2EE,서버 데이터 유출 없이 컨텐츠를 공유하는 웹 서비스  A web service that shares content without server data leakage
+mh-server,MediaHub web,taewook427,https://github.com/k-atusa/MediaHub,Golang JavaScript USAG-Lib E2EE,서버 데이터 유출 없이 컨텐츠를 공유하는 웹 서비스  A web service that shares content without server data leakage
+mh-desktop,MediaHub desktop,D3vle0,https://github.com/k-atusa/MediaHub-desktop,Python USAG-Lib E2EE,대용량 데이터 처리에 특화된 미디어허브 데스크탑 버전  Desktop version of MediaHub designed for large file processing
+mh-android,MediaHub android,taewook427,https://github.com/k-atusa/MediaHub-android,Java Android USAG-Lib E2EE,미디어허브의 안드로이드 버전으로 캐싱이 지원된다  Android version of MediaHub that supports caching
 
 k7-testlog,TestLog,taewook427,https://github.com/taewook427/ETS7,Golang VersionControl,코드 일련번호 기록 관리  Code serial number record management
 k7-syncit,Sync It,taewook427,https://github.com/taewook427/ETS7,Golang CRC32,수정시각과 CRC 기반 폴더 동기화  Synchronize folders by modtime and CRC

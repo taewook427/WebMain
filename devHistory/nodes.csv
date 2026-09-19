@@ -7,9 +7,9 @@ taskrit-Chatting,web,taskrit,,2026-03,2026-04,2026-04,Retired
 taskrit-asset,web,taskrit,,2026-03,2026-04,2026-04,Retired
 
 organization-language-readme-stats,web,readme,,2025-11,2025-11,,Active
-mc-ping-check,web,,,2025-11,2025-12,,Active
+mc-ping-check,web,,,2025-11,2025-12,2026-09,Retired
 ets-readme-counter,web,readme,,2025-09,2025-10,,Active
-hugo-protector,sec,,,2025-09,2025-12,,Active
+hugo-protector,sec,,,2025-09,2025-12,2026-07,Retired
 asmr,web,,,2025-05,2026-05,,Active
 humphreys-map,web,hump,,2025-10,,,In-Dev
 lost-media-archive,web,,,2026-02,,,In-Dev
@@ -18,7 +18,7 @@ zkzzk,web,,,2025-08,2025-09,,Active
 katusa-landing,web,,,2026-04,2026-06,,Active
 logics,cs,,,2026-06,2026-06,,Active
 gb-ai-block,web,,,2026-07,2026-07,,Active
-nova,web,,,2026-08,2026-08,,Active
+nova,web,,,2026-08,2026-08,2026-09,Retired
 ebookificate,util,,,2026-08,2026-09,,Active
 
 c-practice,cs,,,2023-05,2023-06,2023-06,Retired
@@ -31,14 +31,16 @@ bkscript2,cs,,,2025-01,2025-02,2025-02,Retired
 y-bootcamp,ai,,,2024-07,2024-08,2024-08,Retired
 y-student,ai,,,2024-04,2024-06,2024-06,Retired
 dshs,ai,,,2024-08,2025-02,2025-02,Retired
+korizen,ai,,,2026-09,2026-09,,Active
+ml1,ai,,,2026-11,2026-12,2026-12,Retired
+
 y-grade1,web,,,2024-02,2024-02,2026-05,Retired
 y-lteam2,web,,,2023-04,2023-11,2024-01,Retired
 py-copycheck,util,,,2023-10,2023-10,2026-05,Retired
 dev-history,web,,,2026-04,2026-05,,Active
 kzip-lite,web,,,2026-06,2026-06,,Active
 webclock,web,,,2026-06,2026-06,,Active
-korizen,ai,,,2026-09,2026-09,,Active
-ml1,ai,,,2026-09,2026-10,,Active
+webhex,web,,,2026-09,2026-09,,Active
 
 k1-kdm,sec,kutil1,gen1,2021-05,2021-06,2021-10,Retired
 k1-time,util,kutil1,gen1,2021-05,2021-06,2021-10,Retired
@@ -89,7 +91,9 @@ fc-desktop,sec,usag,gen7,2026-07,2026-07,,Active
 fc-android,sec,usag,gen7,2026-08,2026-08,,Active
 
 connhub,web,why,gen7,2026-02,2026-05,,Active
-mediahub,web,why,gen7,2026-06,2026-07,,Active
+mh-server,web,why,gen7,2026-06,2026-07,,Active
+mh-desktop,web,why,gen7,2026-09,2026-12,,Active
+mh-android,web,why,gen7,2026-09,2026-12,,Active
 
 k7-testlog,util,ets7,gen7,2026-06,2026-06,,Active
 k7-syncit,util,ets7,gen7,2026-06,2026-06,,Active
