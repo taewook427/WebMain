@@ -1,0 +1,105 @@
+<!-- test842 : Web Hexview -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WebHex: A web-based hex viewer. View and inspect binary files up to 1 GiB.">
+    <title>WebHex</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔟</text></svg>">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Toolbar -->
+        <header id="toolbar">
+            <div class="toolbar-brand">
+                <span>WebHex</span>
+                <span id="bpr-indicator"></span>
+            </div>
+
+            <div class="toolbar-sep"></div>
+
+            <button id="open-file-btn" class="toolbar-btn" title="Open file (Ctrl+O)">
+                <span class="btn-icon">📂</span>
+                <span>Open</span>
+            </button>
+
+            <input type="file" id="file-input" class="hidden-input">
+
+            <div id="file-info">
+                <span id="file-name"></span>
+                <span id="file-size"></span>
+            </div>
+
+            <div class="goto-group">
+                <input type="text" id="goto-input" placeholder="Go to offset" title="Go to offset (Ctrl+G)">
+                <button id="goto-btn" class="toolbar-btn" title="Go to offset">Go</button>
+                <button id="dv-endian-btn" class="toolbar-btn" title="Toggle Endianness">LE</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div id="main">
+            <!-- Welcome Screen -->
+            <div id="welcome-screen">
+                <div class="welcome-icon">🔟</div>
+                <h1 class="welcome-title">WebHex</h1>
+                <div class="welcome-hint">
+                    <div class="welcome-hint-item">
+                        <span>Drop a file here or click</span>
+                        <span class="kbd">Open</span>
+                    </div>
+                    <div class="welcome-hint-item">
+                        <span class="kbd">Ctrl</span>+<span class="kbd">O</span>
+                        <span>Open file</span>
+                    </div>
+                    <div class="welcome-hint-item">
+                        <span class="kbd">Ctrl</span>+<span class="kbd">G</span>
+                        <span>Go to offset</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hex View -->
+            <div id="hex-view-wrapper">
+                <div id="truncate-info"></div>
+                <div id="hex-col-headers">
+                    <span class="col-header-offset">Offset</span>
+                    <span class="col-header-hex"></span>
+                    <span class="col-header-ascii">ASCII</span>
+                </div>
+                <div id="hex-container">
+                    <div id="hex-spacer"></div>
+                    <div id="hex-content"></div>
+                </div>
+            </div>
+
+            <!-- Data Inspector Panel -->
+            <aside id="data-panel"></aside>
+        </div>
+
+        <!-- Overlays -->
+        <div id="drop-overlay">
+            <div class="drop-zone">
+                <div class="drop-icon">📁</div>
+                <div class="drop-text">Drop file to open</div>
+                <div class="drop-sub">Binary files up to 1 GiB</div>
+            </div>
+        </div>
+
+        <div id="warning-toast">
+            <span class="warning-icon">⚠️</span>
+            <span id="warning-msg"></span>
+            <button id="warning-close">✕</button>
+        </div>
+    </div>
+
+    <script type="module" src="js/App.js"></script>
+</body>
+
+</html>

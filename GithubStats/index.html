@@ -1,0 +1,148 @@
+<!-- test843 : Github Stats -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Language Stats</title>
+  <link rel="icon" href="../favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+  <script src="./ghstat.js" defer></script>
+  <style>
+    header {
+      margin-bottom: 24px;
+    }
+
+    header h1 {
+      margin-bottom: 4px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .preview-box {
+      margin: 16px 0;
+      padding: 20px;
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      background: transparent;
+    }
+
+    github-langs {
+      width: 100%;
+      max-width: 480px;
+    }
+
+    pre {
+      padding: 14px;
+      font-size: 13px;
+      line-height: 1.45;
+      overflow-x: auto;
+    }
+
+    .btn-copy {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>GitHub Language Stats Widget</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Settings</h2>
+
+      <div class="grid-3">
+        <div>
+          <label for="inputUsername">GitHub ID or Link</label>
+          <input type="text" id="inputUsername" placeholder="octocat | github.com/username" value="octocat" />
+        </div>
+        <div>
+          <label for="inputTitle">Title</label>
+          <input type="text" id="inputTitle" placeholder="{name} Language Stats" />
+        </div>
+        <div>
+          <label for="inputExclude">Exclude Languages</label>
+          <input type="text" id="inputExclude" placeholder="HTML, CSS, Shell" />
+        </div>
+      </div>
+
+      <div class="grid-3" style="margin-top: 12px;">
+        <div>
+          <label for="selectLayout">Layout</label>
+          <select id="selectLayout">
+            <option value="classic" selected>Classic Bar</option>
+            <option value="donut">Donut Chart</option>
+            <option value="compact">Compact Bar</option>
+          </select>
+        </div>
+        <div>
+          <label for="selectTheme">Theme</label>
+          <select id="selectTheme">
+            <option value="auto" selected>Auto</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </div>
+        <div>
+          <label for="selectLimit">Show Limits</label>
+          <select id="selectLimit">
+            <option value="3">Top 3</option>
+            <option value="4">Top 4</option>
+            <option value="5">Top 5</option>
+            <option value="6" selected>Top 6</option>
+            <option value="7">Top 7</option>
+            <option value="8">Top 8</option>
+            <option value="9">Top 9</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+
+    <section>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2>Preview</h2>
+        <button type="button" id="btnGenerate" title="Rate limit is 60/hr. Response is cached for 24 hours.">
+          Generate</button>
+      </div>
+      <div class="preview-box">
+        <github-langs id="liveWidget" username="octocat" theme="auto" layout="classic" limit="6"></github-langs>
+      </div>
+    </section>
+
+    <hr>
+
+    <section>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+        <h2>Insertion Code</h2>
+        <div style="display: flex; gap: 8px;">
+          <button type="button" id="btnCopyWebComponent" class="btn-copy">Copy Code</button>
+          <button type="button" id="btnCopyIframe" class="btn-copy">Copy Link</button>
+        </div>
+      </div>
+      <pre><code id="codeWebComponent"></code></pre>
+      <pre><code id="codeIframe"></code></pre>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+
+</html>

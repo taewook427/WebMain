@@ -142,6 +142,12 @@
       border-radius: var(--pico-border-radius);
       display: block;
     }
+
+    github-langs, iframe {
+      width: 100%;
+      background: transparent !important;
+      border: none;
+    }
   </style>
 </head>
 
@@ -161,7 +167,7 @@
           <header><strong>GitHub Languages</strong></header>
           <img
             src="https://github-readme-stats.vercel.app/api/top-langs/?username=taewook427&layout=compact&hide_border=true&bg_color=00000000&langs_count=10&theme=dark"
-            alt="GitHub Languages" class="vercel-img">
+            alt="GitHub Languages" class="vercel-img" onerror="handleStatsError(this)">
         </article>
 
         <article>
@@ -179,17 +185,18 @@
     const appConfig = {
       portals: [
         { name: 'Github Main', url: 'https://github.com/taewook427', color: '#24292F' },
-        { name: 'Joint Dev History', url: './DevHistory1/index.html', color: '#64748B' },
+        { name: 'Joint Dev History', url: './DevHistory/index.html', color: '#64748B' },
         { name: 'Github k-atusa', url: 'https://github.com/k-atusa', color: '#1F2328' },
-        { name: 'KATUSA Main', url: 'https://katusa.space/', color: '#4D7C0F' },
+        { name: 'KATUSA Landing', url: 'https://katusa.space/', color: '#4D7C0F' },
 
         { name: 'YAS-web', url: 'https://yas.katusa.space/', color: '#7C3AED' },
         { name: 'YAS-web lite', url: './YAS-web-lite/index.html', color: '#A855F7' },
-        { name: 'WebClock', url: './WebClock1/index.html', color: '#D97706' },
-        { name: 'KZip-lite', url: './kzip-lite/index.html', color: '#FF94A3' },
+        { name: 'WebHex', url: './WebHex/index.html', color: '#C62828' },
+        { name: 'WebClock', url: './WebClock/index.html', color: '#D32F2F' },
 
-        { name: 'Zkzzk', url: 'https://zkzzk.katusa.space/', color: '#059669' },
-        { name: 'Goodbye AI', url: './goodbye-ai-block/converter.html', color: '#0284C7' },
+        { name: 'KZip lite', url: './kzip-lite/index.html', color: '#1976D2' },
+        { name: 'Language Stats', url: './GithubStats/index.html', color: '#283593' },
+        { name: 'Goodbye AI', url: './goodbye-ai-block/converter.html', color: '#757575' },
       ],
       projects: [
         { title: 'Cycle 06-25 ETS', start: '2025-03-04T00:00:00', end: '2026-09-03T23:59:59', tz: 'KST' },
@@ -307,6 +314,23 @@
     setTimeout(initPortals, 0.1);
     setTimeout(initProgressDDays, 0.1);
   </script>
+
+  <script>
+    // replace github stats
+    function handleStatsError(imgElement) {
+      const parentContainer = imgElement.parentElement;
+      imgElement.remove();
+      const iframe = document.createElement('iframe');
+      iframe.src = './GithubStats/embed.html?username=taewook427&theme=dark&layout=classic&limit=9';
+      iframe.width = '100%';
+      iframe.height = '180';
+      iframe.frameBorder = '0';
+      iframe.scrolling = 'no';
+      iframe.setAttribute('allowtransparency', 'true');
+      iframe.style.background = 'transparent';
+      parentContainer.appendChild(iframe);
+  }
+</script>
 </body>
 
 </html>

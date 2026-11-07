@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Language Stats</title>
+  <script src="./ghstat.js" defer></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      background: transparent !important;
+      background-color: transparent !important;
+      color-scheme: light dark;
+    }
+
+    body {
+      background: transparent !important;
+      background-color: transparent !important;
+      padding: 6px;
+      display: flex;
+      justify-content: center;
+    }
+
+    github-langs {
+      width: 100%;
+      max-width: 480px;
+    }
+  </style>
+</head>
+
+<body>
+  <github-langs id="widget"></github-langs>
+  <script>
+    (function () {
+      const p = new URLSearchParams(window.location.search);
+      const w = document.getElementById('widget');
+      w.setAttribute('username', p.get('user') || p.get('username') || 'octocat');
+      w.setAttribute('theme', p.get('theme') || 'auto');
+      w.setAttribute('layout', p.get('layout') || 'classic');
+      w.setAttribute('limit', p.get('limit') || '6');
+      if (p.get('exclude')) w.setAttribute('exclude', p.get('exclude'));
+      if (p.get('title')) w.setAttribute('title', p.get('title'));
+    })();
+  </script>
+</body>
+
+</html>
